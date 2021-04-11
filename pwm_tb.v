@@ -2,17 +2,30 @@
 
 module pwm_tb;
 
-    reg clock, reset;
+    reg clock;
     reg [6:0] duty_cycle;
     wire signal;
 
-    pwm pwmGenerate(.clk(clock), .reset(reset), .signal(signal));
+    pwm pwmGenerate(.clock(clock), .signal(signal));
+
+    //compile with iverilog -o pwm -c files.txt -s pwm_tb
 
     initial begin
         clock = 0;
-        reset = 0;
+        //reset = 0;
         //signal = 0;
-        #10000000000;
+        #2000000;
+        //reset = 1;
+        #1000000;
+        //reset = 0;
+
+        // #200000000;
+        // reset = 1;
+
+        // #10;
+        // reset = 0;
+
+        #100000000;
         $finish;
     end
 
