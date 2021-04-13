@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+`timescale 1us / 1ns
 /**
  * 
  * READ THIS DESCRIPTION:
@@ -30,7 +30,7 @@
  * 	 iverilog -o proc -c FileList.txt -s Wrapper_tb -PWrapper_tb.FILE=\"sample\"
  *
  * Note the backslashes (\) preceding the quotes. These are required.
- *
+ *	to compile: dir /b *.v > FileList.txt, iverilog -o proc -c files.txt -s Wrapper_tb -P Wrapper_tb.FILE=\"test\"
  **/
 
 module Wrapper_tb #(parameter FILE = "overflow_basic1");
@@ -90,7 +90,7 @@ module Wrapper_tb #(parameter FILE = "overflow_basic1");
 
 	// Create the clock
 	always
-		#10 clock = ~clock; 
+		#500 clock = ~clock; 
 
 	//////////////////
 	// Test Harness //
@@ -99,7 +99,7 @@ module Wrapper_tb #(parameter FILE = "overflow_basic1");
 	// Wires for Test Harness
 	
 	reg testMode = 0; 
-	reg[7:0] num_cycles = DEFAULT_CYCLES;
+	reg[31:0] num_cycles = DEFAULT_CYCLES;
 	reg[15*8:0] exp_text;
 	reg null;
 

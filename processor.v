@@ -63,6 +63,7 @@ module processor(
 
 	/* YOUR CODE STARTS HERE */
 
+
     //wires for grader
     wire [1:0] ALUinA, ALUinB, selectA, selectB;
     wire WMbp, stall, MWstall, isNotEqual, isLessThan;
@@ -71,7 +72,6 @@ module processor(
     //PC to F/D
     wire [31:0] pcNext, pcOut, ir2FD;
     wire cout1, flushJ, flushB;
-    //cla_32 PCADD1(pcIn, cout1, pcOut, 32'b0, 1'b1);
     reg_32 PC(pcOut, pcNext, clock, 1'b1, reset);
     assign address_imem = pcOut;
 
@@ -80,8 +80,8 @@ module processor(
     //F/D to D/X
     wire [31:0] pc2DX, ir2DX, new2DX;
     wire[4:0] ctrl_readRegB1;
-    FDpipe FD(pcNext, pc2DX, ir2FD, ir2DX, clock, reset, stall, MWstall);
-    assign new2DX = (stall | flushJ) ? 32'b0 : ir2DX;                      //if stall, pass nop to DX
+    FDpipe FD(pcNext, pc2DX, ir2FD, ir2DX, clock, reset, (stall || countstatus), MWstall);  //stall if normal stall logic or second counter is occuring
+    assign new2DX = ((stall || countstatus) | flushJ) ? 32'b0 : ir2DX;                      //if stall, pass nop to DX
     assign ctrl_readRegA = ir2DX[21:17];
     assign ctrl_readRegB1 = (~ir2DX[31] & ~ir2DX[30] & ~ir2DX[29] & ~ir2DX[28] & ~ir2DX[27]) ? ir2DX[16:12] : ir2DX[26:22];              //to go to regfile
     assign ctrl_readRegB = (ir2DX[31] & ~ir2DX[30] & ir2DX[29] & ir2DX[28] & ~ir2DX[27]) ? 5'b11110 : ctrl_readRegB1;
@@ -90,6 +90,11 @@ module processor(
     mux_4 BRANCHA(branchbypassA, selectA, oOut, data_writeReg, data_readRegA, aluOut);  
     mux_4 BRANCHB(branchbypassB, selectB, oOut, data_writeReg, data_readRegB, aluOut);  
     branchcomparator BC(branchbypassA, branchbypassB, isLessThan, isNotEqual);
+
+    //second counter, if countstatus is 1, stall
+    wire countstatus, countreset;
+    assign countreset = (ir2DX[31] & ir2DX[30] & ir2DX[29] & ir2DX[28] & ir2DX[27]);
+    secondctrl SECOND(countreset, clock, countstatus);
 
     //D/X to X/M
     wire [31:0] pc2MUX, regAOut, regBOut, ir2XM, in2ALUB, sxImme, bypassB, in2ALUA;
@@ -169,7 +174,7 @@ module processor(
     branchbypass BRANCHBY(new2DX, new2XM, ir2MW, finalir, selectA ,selectB, ctrl_writeEnable);
 
     stallctrl STALLING(ir2DX, ir2XM, ir2MW, stall, MWstall, (multdivStatus || (ctrl_MULT || ctrl_DIV)), pqIRin, data_resultRDY);
-    nextPC NEXTPC(pcOut, ir2XM, branchImme, isNotEqual, isLessThan, in2ALUB, stall, MWstall, pcNext, flushJ, flushB, ir2MW, finalir, ir2DX); 
+    nextPC NEXTPC(pcOut, ir2XM, branchImme, isNotEqual, isLessThan, in2ALUB, (stall || MWstall || countstatus), pcNext, flushJ, flushB, ir2MW, finalir, ir2DX); 
 	
 	/* END CODE */
 

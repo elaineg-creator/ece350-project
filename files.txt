@@ -33,11 +33,14 @@ nextPC.v
 partialProd.v
 partialQuotient.v
 processor.v
+pwm.v
+pwm_tb.v
 PWpipe.v
 RAM.v
 regfile.v
 reg_32.v
 ROM.v
+secondctrl.v
 shift_left_logical.v
 shift_right_arithmic.v
 shift_tb.v

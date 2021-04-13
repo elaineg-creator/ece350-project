@@ -1,4 +1,4 @@
-module nextPC(pc, ir, im, bne, blt, regD, stall, MWstall, PCnext, flushJ, flushB, ir2, ir3, ir4);
+module nextPC(pc, ir, im, bne, blt, regD, stall, PCnext, flushJ, flushB, ir2, ir3, ir4);
     input [31:0] pc, ir, im, regD, ir2, ir3, ir4;
     input bne, blt ,stall, MWstall;
     output [31:0] PCnext;
@@ -30,7 +30,7 @@ module nextPC(pc, ir, im, bne, blt, regD, stall, MWstall, PCnext, flushJ, flushB
     assign isJ2 = (~ir[31] & ~ir[30] & ir[29] & ~ir[28] & ~ir[27]);
     assign PCnoStall = isJ2 ? regD : muxJ1;        //is the instruction JR?
 
-    assign PCnext = (stall || MWstall) ? pc : PCnoStall;
+    assign PCnext = stall ? pc : PCnoStall;
 
     assign flushJ = isJ1 | isJ2;
     assign flushB = isB;
