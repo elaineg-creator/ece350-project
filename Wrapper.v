@@ -39,9 +39,30 @@ module Wrapper (clock, reset, signal1, signal2, signal3);
 
 	// ADD YOUR MEMORY FILE HERE
 	localparam INSTR_FILE = "";
+
+	//clock divider for 1kHz
+
+	localparam kHz = 1000;
+	localparam NEWCLK_FREQ = 1*kHz; // new clock frequency
+    localparam MHz = 1000000;
+	localparam SYSTEM_FREQ = 100*MHz; // System clock frequency
+
+	wire [31:0] CounterLimit;                                   //clock divider for testing with vivado
+    assign CounterLimit = (SYSTEM_FREQ / NEWCLK_FREQ) >> 1;
+    reg clk1kHz = 0;
+    reg[31:0] counter = 0;
+    always @(posedge clock) begin
+        if (counter < CounterLimit - 1)
+            counter <= counter + 1;
+        else begin
+            counter <= 0;
+            clk1kHz <= ~clk1kHz;
+        end
+    end
+
 	
 	// Main Processing Unit
-	processor CPU(.clock(clock), .reset(reset), 
+	processor CPU(.clock(clk1kHz), .reset(reset), 
 								
 		// ROM
 		.address_imem(instAddr), .q_imem(instData),
@@ -60,19 +81,19 @@ module Wrapper (clock, reset, signal1, signal2, signal3);
 	
 	// Instruction Memory (ROM)
 	ROM #(.MEMFILE({INSTR_FILE, ".mem"}))
-	InstMem(.clk(clock), 
+	InstMem(.clk(clk1kHz), 
 		.addr(instAddr[11:0]), 
 		.dataOut(instData));
 	
 	// Register File
-	regfile RegisterFile(.clock(clock), 
+	regfile RegisterFile(.clock(clk1kHz), 
 		.ctrl_writeEnable(rwe), .ctrl_reset(reset), 
 		.ctrl_writeReg(rd),
 		.ctrl_readRegA(rs1), .ctrl_readRegB(rs2), 
 		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB));
 						
 	// Processor Memory (RAM)
-	RAM ProcMem(.clk(clock), 
+	RAM ProcMem(.clk(clk1kHz), 
 		.wEn(mwe), 
 		.addr(memAddr[11:0]), 
 		.dataIn(memDataIn), 
