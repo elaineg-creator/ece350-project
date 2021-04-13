@@ -24,7 +24,7 @@
  *
  **/
 
-module Wrapper (clock, reset);
+module Wrapper (clock, reset, signal1, signal2, signal3);
 	input clock, reset;
 
 	wire rwe, mwe;
@@ -32,6 +32,9 @@ module Wrapper (clock, reset);
 	wire[31:0] instAddr, instData, 
 		rData, regA, regB,
 		memAddr, memDataIn, memDataOut;
+
+	//servos
+	output signal1, signal2, signal3;
 
 
 	// ADD YOUR MEMORY FILE HERE
@@ -50,7 +53,10 @@ module Wrapper (clock, reset);
 									
 		// RAM
 		.wren(mwe), .address_dmem(memAddr), 
-		.data(memDataIn), .q_dmem(memDataOut)); 
+		.data(memDataIn), .q_dmem(memDataOut),
+		
+		//servos
+		.signal1(signal1), .signal2(signal2), .signal3(signal3));  
 	
 	// Instruction Memory (ROM)
 	ROM #(.MEMFILE({INSTR_FILE, ".mem"}))

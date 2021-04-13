@@ -41,6 +41,7 @@ regfile.v
 reg_32.v
 ROM.v
 secondctrl.v
+servooutput.v
 shift_left_logical.v
 shift_right_arithmic.v
 shift_tb.v

@@ -5,4 +5,9 @@
         <Type>JI</Type>
         <Code>11111</Code>
     </Instruction>
+    <Instruction>
+        <Name>servo</Name>
+        <Type>JII</Type>
+        <Code>11000</Code>
+    </Instruction>
 </ISA>

@@ -39,7 +39,10 @@ module processor(
     ctrl_readRegB,                  // O: Register to read from port B of RegFile
     data_writeReg,                  // O: Data to write to for RegFile
     data_readRegA,                  // I: Data from port A of RegFile
-    data_readRegB                   // I: Data from port B of RegFile
+    data_readRegB,                   // I: Data from port B of RegFile
+
+    //servo outputs
+    signal1, signal2, signal3
 	 
 	);
 
@@ -60,6 +63,9 @@ module processor(
 	output [4:0] ctrl_writeReg, ctrl_readRegA, ctrl_readRegB;
 	output [31:0] data_writeReg;
 	input [31:0] data_readRegA, data_readRegB;
+
+    //servos
+    output signal1, signal2, signal3;
 
 	/* YOUR CODE STARTS HERE */
 
@@ -95,6 +101,20 @@ module processor(
     wire countstatus, countreset;
     assign countreset = (ir2DX[31] & ir2DX[30] & ir2DX[29] & ir2DX[28] & ir2DX[27]);
     secondctrl SECOND(countreset, clock, countstatus);
+
+    //output 1 to servos after second/minute/hour passed for 2 cycles
+    //each servo will have different rd associated with it 
+    wire signal1, reset1;
+    assign reset1 = (ir2DX[31] & ir2DX[30] & ~ir2DX[29] & ~ir2DX[28] & ~ir2DX[27] & ~ir2DX[26] & ~ir2DX[25] & ~ir2DX[24] & ~ir2DX[23] & ir2DX[22]);     //output for seconds motor, servo 1 (r1)
+    servooutput SERVO1(reset1, clock, signal1);
+
+    wire signal2, reset2;
+    assign reset2 = (ir2DX[31] & ir2DX[30] & ~ir2DX[29] & ~ir2DX[28] & ~ir2DX[27] & ~ir2DX[26] & ~ir2DX[25] & ~ir2DX[24] & ir2DX[23] & ~ir2DX[22]);     //output for minutes motor, servo 2 (r2)
+    servooutput SERVO1(reset2, clock, signal2);
+
+    wire signal3, reset3;
+    assign reset1 = (ir2DX[31] & ir2DX[30] & ~ir2DX[29] & ~ir2DX[28] & ~ir2DX[27] & ~ir2DX[26] & ~ir2DX[25] & ~ir2DX[24] & ir2DX[23] & ir2DX[22]);     //output for seconds motor, servo 3 (r3)
+    servooutput SERVO1(reset3, clock, signal3);
 
     //D/X to X/M
     wire [31:0] pc2MUX, regAOut, regBOut, ir2XM, in2ALUB, sxImme, bypassB, in2ALUA;
