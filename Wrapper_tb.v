@@ -30,7 +30,7 @@
  * 	 iverilog -o proc -c FileList.txt -s Wrapper_tb -PWrapper_tb.FILE=\"sample\"
  *
  * Note the backslashes (\) preceding the quotes. These are required.
- *	to compile: dir /b *.v > FileList.txt, iverilog -o proc -c files.txt -s Wrapper_tb -P Wrapper_tb.FILE=\"test\"
+ *	to compile: dir /b *.v > files.txt, iverilog -o proc -c files.txt -s Wrapper_tb -P Wrapper_tb.FILE=\"test\"
  **/
 
 module Wrapper_tb #(parameter FILE = "overflow_basic1");

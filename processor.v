@@ -110,11 +110,11 @@ module processor(
 
     wire signal2, reset2;
     assign reset2 = (ir2DX[31] & ir2DX[30] & ~ir2DX[29] & ~ir2DX[28] & ~ir2DX[27] & ~ir2DX[26] & ~ir2DX[25] & ~ir2DX[24] & ir2DX[23] & ~ir2DX[22]);     //output for minutes motor, servo 2 (r2)
-    servooutput SERVO1(reset2, clock, signal2);
+    servooutput SERVO2(reset2, clock, signal2);
 
     wire signal3, reset3;
-    assign reset1 = (ir2DX[31] & ir2DX[30] & ~ir2DX[29] & ~ir2DX[28] & ~ir2DX[27] & ~ir2DX[26] & ~ir2DX[25] & ~ir2DX[24] & ir2DX[23] & ir2DX[22]);     //output for seconds motor, servo 3 (r3)
-    servooutput SERVO1(reset3, clock, signal3);
+    assign reset3 = (ir2DX[31] & ir2DX[30] & ~ir2DX[29] & ~ir2DX[28] & ~ir2DX[27] & ~ir2DX[26] & ~ir2DX[25] & ~ir2DX[24] & ir2DX[23] & ir2DX[22]);     //output for seconds motor, servo 3 (r3)
+    servooutput SERVO3(reset3, clock, signal3);
 
     //D/X to X/M
     wire [31:0] pc2MUX, regAOut, regBOut, ir2XM, in2ALUB, sxImme, bypassB, in2ALUA;
