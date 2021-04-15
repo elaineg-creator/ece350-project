@@ -1,4 +1,4 @@
-Cycle 1007: Wrote 1 into register 1
+Cycle 1013: Wrote 1 into register 1
 ============== Testing Mode ==============
 Reg  0:           0
 Reg  1:           1

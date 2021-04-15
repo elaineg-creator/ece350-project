@@ -44,6 +44,7 @@ module Wrapper_tb #(parameter FILE = "overflow_basic1");
 
 	// Inputs to the processor
 	reg clock = 0, reset = 0;
+	reg start = 0;
 
 	// I/O for the processor
 	wire rwe, mwe;
@@ -52,7 +53,7 @@ module Wrapper_tb #(parameter FILE = "overflow_basic1");
 	wire[31:0] instAddr, instData, 
 		rData, regA, regB,
 		memAddr, memDataIn, memDataOut;
-	wire signal1, signal2, signal3;
+	wire servo1, servo2, servo3, startLED, signal1LED;
 
 	// Main Processing Unit
 	processor CPU(.clock(clock), .reset(reset), 
@@ -70,7 +71,9 @@ module Wrapper_tb #(parameter FILE = "overflow_basic1");
 		.data(memDataIn), .q_dmem(memDataOut),
 		
 		//servos
-		.signal1(signal1), .signal2(signal2), .signal3(signal3)); 
+		.servo1(servo1), .servo2(servo2), .servo3(servo3),
+		
+		.start(start), .startLED(startLED), .signal1LED(signal1LED)); 
 	
 	// Instruction Memory (ROM)
 	ROM #(.MEMFILE({DIR, MEM_DIR, FILE, ".mem"}))
@@ -95,6 +98,8 @@ module Wrapper_tb #(parameter FILE = "overflow_basic1");
 	// Create the clock
 	always
 		#500 clock = ~clock; 
+	always
+		#5000 start = ~start;
 
 	//////////////////
 	// Test Harness //
@@ -128,6 +133,7 @@ module Wrapper_tb #(parameter FILE = "overflow_basic1");
 			reg_to_test = 0;
 
 	initial begin
+		
 		// Check if the parameter exists
 		if(FILE == 0) begin
 			$display("Please specify the test");

@@ -1,8 +1,8 @@
 module XMpipe(oIn, oOut, bIn, bOut, irIn, irOut, clock, reset, pcIn, pcOut, MWstall);
     input [31:0] oIn, bIn, irIn, pcIn;
-    input clock, reset, overIn, MWstall;
+    input clock, reset, MWstall;
     output [31:0] oOut, bOut, irOut, pcOut;
-    output overOut;
+
     wire [31:0] irIfStall;
 
     assign irIfStall = MWstall ? irOut : irIn;

@@ -42,7 +42,11 @@ module processor(
     data_readRegB,                   // I: Data from port B of RegFile
 
     //servo outputs
-    signal1, signal2, signal3
+    servo1, servo2, servo3,
+
+    //start
+    start, startLED,
+    signal1LED
 	 
 	);
 
@@ -65,7 +69,18 @@ module processor(
 	input [31:0] data_readRegA, data_readRegB;
 
     //servos
-    output signal1, signal2, signal3;
+    output servo1, servo2, servo3;
+    output signal1LED;
+
+    assign signal1LED = signal1;
+
+    //start
+    input start;
+    output startLED;
+    wire startOn;
+
+    assign startOn = start;
+    assign startLED = startOn;
 
 	/* YOUR CODE STARTS HERE */
 
@@ -107,14 +122,17 @@ module processor(
     wire signal1, reset1;
     assign reset1 = (ir2DX[31] & ir2DX[30] & ~ir2DX[29] & ~ir2DX[28] & ~ir2DX[27] & ~ir2DX[26] & ~ir2DX[25] & ~ir2DX[24] & ~ir2DX[23] & ir2DX[22]);     //output for seconds motor, servo 1 (r1)
     servooutput SERVO1(reset1, clock, signal1);
+    assign servo1 = signal1;
 
     wire signal2, reset2;
     assign reset2 = (ir2DX[31] & ir2DX[30] & ~ir2DX[29] & ~ir2DX[28] & ~ir2DX[27] & ~ir2DX[26] & ~ir2DX[25] & ~ir2DX[24] & ir2DX[23] & ~ir2DX[22]);     //output for minutes motor, servo 2 (r2)
     servooutput SERVO2(reset2, clock, signal2);
+    assign servo2 = signal2;
 
     wire signal3, reset3;
     assign reset3 = (ir2DX[31] & ir2DX[30] & ~ir2DX[29] & ~ir2DX[28] & ~ir2DX[27] & ~ir2DX[26] & ~ir2DX[25] & ~ir2DX[24] & ir2DX[23] & ir2DX[22]);     //output for seconds motor, servo 3 (r3)
     servooutput SERVO3(reset3, clock, signal3);
+    assign servo3 = signal3;
 
     //D/X to X/M
     wire [31:0] pc2MUX, regAOut, regBOut, ir2XM, in2ALUB, sxImme, bypassB, in2ALUA;
@@ -194,7 +212,7 @@ module processor(
     branchbypass BRANCHBY(new2DX, new2XM, ir2MW, finalir, selectA ,selectB, ctrl_writeEnable);
 
     stallctrl STALLING(ir2DX, ir2XM, ir2MW, stall, MWstall, (multdivStatus || (ctrl_MULT || ctrl_DIV)), pqIRin, data_resultRDY);
-    nextPC NEXTPC(pcOut, ir2XM, branchImme, isNotEqual, isLessThan, in2ALUB, (stall || MWstall || countstatus), pcNext, flushJ, flushB, ir2MW, finalir, ir2DX); 
+    nextPC NEXTPC(pcOut, ir2XM, branchImme, isNotEqual, isLessThan, in2ALUB, (stall || MWstall || countstatus), pcNext, flushJ, flushB, ir2MW, finalir, ir2DX, start, clock); 
 	
 	/* END CODE */
 

@@ -24,8 +24,9 @@
  *
  **/
 
-module Wrapper (clock, reset, signal1, signal2, signal3);
+module Wrapper (clock, reset, start, servo1, servo2, servo3, startLED, signal1LED);
 	input clock, reset;
+	input start;
 
 	wire rwe, mwe;
 	wire[4:0] rd, rs1, rs2;
@@ -34,11 +35,12 @@ module Wrapper (clock, reset, signal1, signal2, signal3);
 		memAddr, memDataIn, memDataOut;
 
 	//servos
-	output signal1, signal2, signal3;
+	output servo1, servo2, servo3, startLED;
+	output signal1LED;
 
 
 	// ADD YOUR MEMORY FILE HERE
-	localparam INSTR_FILE = "";
+	localparam INSTR_FILE = "minute";
 
 	//clock divider for 1kHz
 
@@ -77,7 +79,9 @@ module Wrapper (clock, reset, signal1, signal2, signal3);
 		.data(memDataIn), .q_dmem(memDataOut),
 		
 		//servos
-		.signal1(signal1), .signal2(signal2), .signal3(signal3));  
+		.servo1(servo1), .servo2(servo2), .servo3(servo3),
+		
+		.start(start), .startLED(startLED), .signal1LED(signal1LED));  
 	
 	// Instruction Memory (ROM)
 	ROM #(.MEMFILE({INSTR_FILE, ".mem"}))
