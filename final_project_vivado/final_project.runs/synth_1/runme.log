@@ -1,0 +1,394 @@
+
+*** Running vivado
+    with args -log Wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Wrapper.tcl
+
+
+
+****** Vivado v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source Wrapper.tcl -notrace
+Command: synth_design -top Wrapper -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 54624
+WARNING: [Synth 8-992] countstatus is already implicitly declared earlier [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/processor.v:116]
+WARNING: [Synth 8-6901] identifier 'signal1' is used before its declaration [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/processor.v:75]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1031.109 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Wrapper' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/Wrapper.v:27]
+	Parameter INSTR_FILE bound to: minute - type: string 
+	Parameter kHz bound to: 1000 - type: integer 
+	Parameter NEWCLK_FREQ bound to: 1000 - type: integer 
+	Parameter MHz bound to: 1000000 - type: integer 
+	Parameter SYSTEM_FREQ bound to: 100000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'processor' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/processor.v:20]
+INFO: [Synth 8-6157] synthesizing module 'reg_32' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/reg_32.v:1]
+INFO: [Synth 8-6157] synthesizing module 'dffe_ref' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/dffe_ref.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'dffe_ref' (1#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/dffe_ref.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'reg_32' (2#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/reg_32.v:1]
+INFO: [Synth 8-6157] synthesizing module 'FDpipe' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/FDpipe.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'FDpipe' (3#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/FDpipe.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_4' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/mux_4.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_2' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/mux_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_2' (4#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/mux_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_4' (5#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/mux_4.v:1]
+INFO: [Synth 8-6157] synthesizing module 'branchcomparator' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/branchcomparator.v:1]
+INFO: [Synth 8-6157] synthesizing module 'cla_32' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/cla_32.v:1]
+INFO: [Synth 8-6157] synthesizing module 'cpgenerate' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/cpgenerate.v:1]
+INFO: [Synth 8-6157] synthesizing module 'cla_slice' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/cla_slice.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'cla_slice' (6#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/cla_slice.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'cpgenerate' (7#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/cpgenerate.v:1]
+INFO: [Synth 8-6157] synthesizing module 'eight_bit_cla' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/eight_bit_cla.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'eight_bit_cla' (8#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/eight_bit_cla.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sum_unit' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/sum_unit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sum_unit' (9#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/sum_unit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'cla_32' (10#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/cla_32.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'branchcomparator' (11#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/branchcomparator.v:1]
+INFO: [Synth 8-6157] synthesizing module 'secondctrl' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/secondctrl.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'secondctrl' (12#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/secondctrl.v:1]
+INFO: [Synth 8-6157] synthesizing module 'servooutput' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/servooutput.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'servooutput' (13#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/servooutput.v:1]
+INFO: [Synth 8-6157] synthesizing module 'DXpipe' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/DXpipe.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'DXpipe' (14#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/DXpipe.v:1]
+INFO: [Synth 8-6157] synthesizing module 'alu' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/alu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'bitwise_not' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/bitwise_not.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'bitwise_not' (15#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/bitwise_not.v:1]
+INFO: [Synth 8-6157] synthesizing module 'bitwise_and' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/bitwise_and.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'bitwise_and' (16#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/bitwise_and.v:1]
+INFO: [Synth 8-6157] synthesizing module 'bitwise_or' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/bitwise_or.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'bitwise_or' (17#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/bitwise_or.v:1]
+INFO: [Synth 8-6157] synthesizing module 'shift_right_arithmic' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/shift_right_arithmic.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'shift_right_arithmic' (18#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/shift_right_arithmic.v:1]
+INFO: [Synth 8-6157] synthesizing module 'shift_left_logical' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/shift_left_logical.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'shift_left_logical' (19#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/shift_left_logical.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_8' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/mux_8.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_8' (20#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/mux_8.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (21#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/alu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'multdivctrl' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/multdivctrl.v:1]
+INFO: [Synth 8-6157] synthesizing module 'multdiv' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/multdiv.v:1]
+INFO: [Synth 8-6157] synthesizing module 'multiplier' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/multiplier.v:1]
+INFO: [Synth 8-6157] synthesizing module 'counter' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/counter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'counter' (22#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/counter.v:1]
+INFO: [Synth 8-6157] synthesizing module 'partialProd' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/partialProd.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'partialProd' (23#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/partialProd.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'multiplier' (24#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/multiplier.v:1]
+INFO: [Synth 8-6157] synthesizing module 'divider' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/divider.v:1]
+INFO: [Synth 8-6157] synthesizing module 'partialQuotient' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/partialQuotient.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'partialQuotient' (25#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/partialQuotient.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'divider' (26#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/divider.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'multdiv' (27#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/multdiv.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'multdivctrl' (28#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/multdivctrl.v:1]
+INFO: [Synth 8-6157] synthesizing module 'PWpipe' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/PWpipe.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'PWpipe' (29#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/PWpipe.v:1]
+INFO: [Synth 8-6157] synthesizing module 'XMpipe' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/XMpipe.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'XMpipe' (30#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/XMpipe.v:1]
+INFO: [Synth 8-6157] synthesizing module 'MWpipe' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/MWpipe.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'MWpipe' (31#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/MWpipe.v:1]
+INFO: [Synth 8-6157] synthesizing module 'bypassctrl' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/bypassctrl.v:1]
+INFO: [Synth 8-6157] synthesizing module 'comparator' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/comparator.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'comparator' (32#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/comparator.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_4_2' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/mux_4_2.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_2_2' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/mux_2_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_2_2' (33#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/mux_2_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_4_2' (34#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/mux_4_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'bypassctrl' (35#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/bypassctrl.v:1]
+INFO: [Synth 8-6157] synthesizing module 'branchbypass' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/branchbypass.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'branchbypass' (36#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/branchbypass.v:1]
+INFO: [Synth 8-6157] synthesizing module 'stallctrl' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/stallctrl.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'stallctrl' (37#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/stallctrl.v:1]
+INFO: [Synth 8-6157] synthesizing module 'nextPC' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/nextPC.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'nextPC' (38#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/nextPC.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'processor' (39#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/processor.v:20]
+INFO: [Synth 8-6157] synthesizing module 'ROM' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/ROM.v:2]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDRESS_WIDTH bound to: 12 - type: integer 
+	Parameter DEPTH bound to: 4096 - type: integer 
+	Parameter MEMFILE bound to: 80'b01101101011010010110111001110101011101000110010100101110011011010110010101101101 
+INFO: [Synth 8-3876] $readmem data file 'minute.mem' is read successfully [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/ROM.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'ROM' (40#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/ROM.v:2]
+INFO: [Synth 8-6157] synthesizing module 'regfile' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/regfile.v:1]
+INFO: [Synth 8-6157] synthesizing module 'tristatebuf' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/tristatebuf.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'tristatebuf' (41#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/tristatebuf.v:1]
+INFO: [Synth 8-6157] synthesizing module 'decoder' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/decoder.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'decoder' (42#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/decoder.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'regfile' (43#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/regfile.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RAM' [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/RAM.v:2]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDRESS_WIDTH bound to: 12 - type: integer 
+	Parameter DEPTH bound to: 4096 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RAM' (44#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/RAM.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Wrapper' (45#1) [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/Wrapper.v:27]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1031.109 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1031.109 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1031.109 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.441 . Memory (MB): peak = 1031.109 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/constrs_1/new/NexysA7.xdc]
+WARNING: [Vivado 12-584] No ports matched 'signal1'. [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/constrs_1/new/NexysA7.xdc:5]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/constrs_1/new/NexysA7.xdc:5]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'signal2'. [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/constrs_1/new/NexysA7.xdc:6]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/constrs_1/new/NexysA7.xdc:6]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'signal3'. [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/constrs_1/new/NexysA7.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/constrs_1/new/NexysA7.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'signal1'. [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/constrs_1/new/NexysA7.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/constrs_1/new/NexysA7.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'signal2'. [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/constrs_1/new/NexysA7.xdc:9]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/constrs_1/new/NexysA7.xdc:9]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'signal3'. [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/constrs_1/new/NexysA7.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/constrs_1/new/NexysA7.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/constrs_1/new/NexysA7.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/constrs_1/new/NexysA7.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1035.422 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.076 . Memory (MB): peak = 1035.422 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1035.422 ; gain = 4.313
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1035.422 ; gain = 4.313
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1035.422 ; gain = 4.313
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1035.422 ; gain = 4.313
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    1 Bit       Adders := 3     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1546  
++---Registers : 
+	               32 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 1788  
++---RAMs : 
+	             128K Bit	(4096 X 32 bit)          RAMs := 1     
++---ROMs : 
+	                    ROMs := 1     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 88    
+	   2 Input    5 Bit        Muxes := 9     
+	   2 Input    2 Bit        Muxes := 14    
+	   2 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:17 ; elapsed = 00:01:18 . Memory (MB): peak = 1100.785 ; gain = 69.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping	Report
++------------+---------------------+---------------+----------------+
+|Module Name | RTL Object          | Depth x Width | Implemented As | 
++------------+---------------------+---------------+----------------+
+|Wrapper     | InstMem/dataOut_reg | 4096x11       | Block RAM      | 
++------------+---------------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping	Report (see note below)
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Wrapper     | ProcMem/MemoryArray_reg | 4 K x 32(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 4      | 
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:28 ; elapsed = 00:01:30 . Memory (MB): peak = 1100.785 ; gain = 69.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:33 ; elapsed = 00:01:35 . Memory (MB): peak = 1100.785 ; gain = 69.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping	Report
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Wrapper     | ProcMem/MemoryArray_reg | 4 K x 32(NO_CHANGE)    | W | R |                        |   |   | Port A           | 0      | 4      | 
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance InstMem/dataOut_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance InstMem/dataOut_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:39 ; elapsed = 00:01:40 . Memory (MB): peak = 1100.785 ; gain = 69.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:43 ; elapsed = 00:01:45 . Memory (MB): peak = 1100.785 ; gain = 69.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:43 ; elapsed = 00:01:45 . Memory (MB): peak = 1100.785 ; gain = 69.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:44 ; elapsed = 00:01:45 . Memory (MB): peak = 1100.785 ; gain = 69.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:44 ; elapsed = 00:01:45 . Memory (MB): peak = 1100.785 ; gain = 69.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:44 ; elapsed = 00:01:45 . Memory (MB): peak = 1100.785 ; gain = 69.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:44 ; elapsed = 00:01:46 . Memory (MB): peak = 1100.785 ; gain = 69.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     2|
+|2     |CARRY4   |     4|
+|3     |LUT1     |    67|
+|4     |LUT2     |   250|
+|5     |LUT3     |   126|
+|6     |LUT4     |   140|
+|7     |LUT5     |   169|
+|8     |LUT6     |   444|
+|9     |MUXF7    |     6|
+|10    |RAMB18E1 |     1|
+|11    |RAMB36E1 |     1|
+|12    |FDCE     |   396|
+|13    |FDRE     |    32|
+|14    |FDSE     |     3|
+|15    |IBUF     |     3|
+|16    |OBUF     |     5|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:44 ; elapsed = 00:01:46 . Memory (MB): peak = 1100.785 ; gain = 69.676
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:29 ; elapsed = 00:01:40 . Memory (MB): peak = 1100.785 ; gain = 65.363
+Synthesis Optimization Complete : Time (s): cpu = 00:01:44 ; elapsed = 00:01:46 . Memory (MB): peak = 1100.785 ; gain = 69.676
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.071 . Memory (MB): peak = 1100.785 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 2 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1100.785 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+108 Infos, 8 Warnings, 6 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:52 ; elapsed = 00:02:01 . Memory (MB): peak = 1100.785 ; gain = 87.520
+INFO: [Common 17-1381] The checkpoint 'D:/Study/Duke/+1/ECE350/Project/final_project/final_project.runs/synth_1/Wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Wrapper_utilization_synth.rpt -pb Wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 15 20:17:51 2021...
