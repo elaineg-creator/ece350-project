@@ -46,7 +46,7 @@ module processor(
 
     //start
     start, startLED,
-    signal1LED
+    signal1LED, signal2LED
 	 
 	);
 
@@ -70,9 +70,10 @@ module processor(
 
     //servos
     output servo1, servo2, servo3;
-    output signal1LED;
+    output signal1LED, signal2LED;
 
     assign signal1LED = signal1;
+    assign signal2LED = signal2;
 
     //start
     input start;

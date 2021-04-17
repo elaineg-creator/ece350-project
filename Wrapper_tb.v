@@ -53,7 +53,7 @@ module Wrapper_tb #(parameter FILE = "overflow_basic1");
 	wire[31:0] instAddr, instData, 
 		rData, regA, regB,
 		memAddr, memDataIn, memDataOut;
-	wire servo1, servo2, servo3, startLED, signal1LED;
+	wire servo1, servo2, servo3, startLED, signal1LED, signal2LED;
 
 	// Main Processing Unit
 	processor CPU(.clock(clock), .reset(reset), 
@@ -73,7 +73,7 @@ module Wrapper_tb #(parameter FILE = "overflow_basic1");
 		//servos
 		.servo1(servo1), .servo2(servo2), .servo3(servo3),
 		
-		.start(start), .startLED(startLED), .signal1LED(signal1LED)); 
+		.start(start), .startLED(startLED), .signal1LED(signal1LED), .signal2LED(signal2LED)); 
 	
 	// Instruction Memory (ROM)
 	ROM #(.MEMFILE({DIR, MEM_DIR, FILE, ".mem"}))

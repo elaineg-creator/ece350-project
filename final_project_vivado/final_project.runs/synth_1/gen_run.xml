@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1618532586">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1618631994">
   <File Type="PA-TCL" Name="Wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="Wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Wrapper_reports.tcl"/>
@@ -13,7 +13,7 @@
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/DXpipe.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/DXpipe.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../DXpipe.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -22,7 +22,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/FDpipe.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/FDpipe.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FDpipe.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -31,7 +31,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/MWpipe.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/MWpipe.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../MWpipe.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -40,7 +40,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/PWpipe.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/PWpipe.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../PWpipe.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -49,7 +49,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/RAM.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/RAM.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RAM.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -58,7 +58,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/ROM.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/ROM.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../ROM.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -67,7 +67,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/XMpipe.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/XMpipe.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../XMpipe.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -76,7 +76,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/alu.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/alu.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../alu.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -85,7 +85,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/bitwise_and.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/bitwise_and.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../bitwise_and.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -94,7 +94,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/bitwise_not.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/bitwise_not.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../bitwise_not.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -103,7 +103,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/bitwise_or.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/bitwise_or.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../bitwise_or.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -112,7 +112,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/branchbypass.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/branchbypass.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../branchbypass.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -121,7 +121,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/branchcomparator.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/branchcomparator.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../branchcomparator.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -130,7 +130,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/bypassctrl.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/bypassctrl.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../bypassctrl.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -139,7 +139,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/cla_32.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/cla_32.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../cla_32.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -148,7 +148,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/cla_slice.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/cla_slice.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../cla_slice.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -157,7 +157,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/comparator.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/comparator.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../comparator.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -166,7 +166,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/counter.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/counter.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../counter.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -175,7 +175,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/cpgenerate.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/cpgenerate.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../cpgenerate.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -184,7 +184,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/decoder.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/decoder.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../decoder.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -193,7 +193,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/dffe_ref.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/dffe_ref.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../dffe_ref.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -202,7 +202,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/divider.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/divider.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../divider.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -211,7 +211,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/eight_bit_cla.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/eight_bit_cla.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../eight_bit_cla.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -220,7 +220,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/multdiv.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/multdiv.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../multdiv.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -229,7 +229,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/multdivctrl.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/multdivctrl.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../multdivctrl.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -238,7 +238,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/multiplier.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/multiplier.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../multiplier.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -247,7 +247,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/mux_2.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/mux_2.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../mux_2.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -256,7 +256,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/mux_2_2.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/mux_2_2.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../mux_2_2.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -265,7 +265,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/mux_4.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/mux_4.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../mux_4.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -274,7 +274,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/mux_4_2.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/mux_4_2.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../mux_4_2.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -283,7 +283,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/mux_8.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/mux_8.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../mux_8.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -292,7 +292,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/nextPC.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/nextPC.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../nextPC.v"/>
         <Attr Name="ImportTime" Val="1618433256"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -301,7 +301,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/partialProd.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/partialProd.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../partialProd.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -310,7 +310,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/partialQuotient.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/partialQuotient.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../partialQuotient.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -319,7 +319,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/processor.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/processor.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../processor.v"/>
         <Attr Name="ImportTime" Val="1618433256"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -328,7 +328,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/reg_32.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/reg_32.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../reg_32.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -337,7 +337,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/regfile.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/regfile.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../regfile.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -346,7 +346,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/secondctrl.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/secondctrl.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../secondctrl.v"/>
         <Attr Name="ImportTime" Val="1618433256"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -355,7 +355,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/servooutput.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/servooutput.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../servooutput.v"/>
         <Attr Name="ImportTime" Val="1618433256"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -364,7 +364,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/shift_left_logical.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/shift_left_logical.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../shift_left_logical.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -373,7 +373,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/shift_right_arithmic.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/shift_right_arithmic.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../shift_right_arithmic.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -382,7 +382,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/stallctrl.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/stallctrl.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../stallctrl.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -391,7 +391,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/sum_unit.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/sum_unit.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sum_unit.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -400,7 +400,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/tristatebuf.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/tristatebuf.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../tristatebuf.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -409,7 +409,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/Wrapper.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/Wrapper.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Wrapper.v"/>
         <Attr Name="ImportTime" Val="1618433256"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -419,7 +419,7 @@
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/mux_32.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/mux_32.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../mux_32.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -429,7 +429,7 @@
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/cla_tb.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/cla_tb.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../cla_tb.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -439,7 +439,7 @@
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/encoder.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/encoder.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../encoder.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -449,7 +449,7 @@
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/mux_2_16.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/mux_2_16.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../mux_2_16.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -459,7 +459,7 @@
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/pwm.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/pwm.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../pwm.v"/>
         <Attr Name="ImportTime" Val="1618433256"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -469,7 +469,7 @@
     <File Path="$PSRCDIR/sources_1/imports/ece350-project/shift_tb.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/shift_tb.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../shift_tb.v"/>
         <Attr Name="ImportTime" Val="1617651360"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -478,7 +478,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/Memory Files/basiccount.mem">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/Test Files/Memory Files/basiccount.mem"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Test Files/Memory Files/basiccount.mem"/>
         <Attr Name="ImportTime" Val="1618433254"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -486,7 +486,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/Memory Files/servo1.mem">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/Test Files/Memory Files/servo1.mem"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Test Files/Memory Files/servo1.mem"/>
         <Attr Name="ImportTime" Val="1618433254"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -494,8 +494,14 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/Memory Files/minute.mem">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../ece350-project/Test Files/Memory Files/minute.mem"/>
-        <Attr Name="ImportTime" Val="1618433254"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Test Files/Memory Files/minute.mem"/>
+        <Attr Name="ImportTime" Val="1618627230"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../Test Files/Memory Files/moreminutes.mem">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>

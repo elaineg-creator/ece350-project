@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/Study/Duke/+1/ECE350/Project/final_project/final_project.runs/synth_1/Wrapper.tcl"
+  variable script "C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.runs/synth_1/Wrapper.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,71 +70,77 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 1
+set_param synth.incrementalSynthesisCache C:/Users/guoel/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-12340-DESKTOP-CE0C5LI/incrSyn
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir D:/Study/Duke/+1/ECE350/Project/final_project/final_project.cache/wt [current_project]
-set_property parent.project_path D:/Study/Duke/+1/ECE350/Project/final_project/final_project.xpr [current_project]
+set_property webtalk.parent_dir {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.cache/wt} [current_project]
+set_property parent.project_path {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.xpr} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo d:/Study/Duke/+1/ECE350/Project/final_project/final_project.cache/ip [current_project]
+set_property ip_output_repo {c:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_mem {
-  {D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/Memory Files/basiccount.mem}
-  {D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/Memory Files/servo1.mem}
-  {D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/Memory Files/minute.mem}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/Memory Files/basiccount.mem}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/Memory Files/servo1.mem}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/Memory Files/minute.mem}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/Test Files/Memory Files/moreminutes.mem}
 }
 read_verilog -library xil_defaultlib {
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/DXpipe.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/FDpipe.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/MWpipe.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/PWpipe.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/RAM.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/ROM.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/XMpipe.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/alu.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/bitwise_and.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/bitwise_not.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/bitwise_or.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/branchbypass.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/branchcomparator.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/bypassctrl.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/cla_32.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/cla_slice.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/comparator.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/counter.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/cpgenerate.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/decoder.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/dffe_ref.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/divider.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/eight_bit_cla.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/multdiv.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/multdivctrl.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/multiplier.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/mux_2.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/mux_2_2.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/mux_4.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/mux_4_2.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/mux_8.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/nextPC.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/partialProd.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/partialQuotient.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/processor.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/reg_32.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/regfile.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/secondctrl.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/servooutput.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/shift_left_logical.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/shift_right_arithmic.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/stallctrl.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/sum_unit.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/tristatebuf.v
-  D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/sources_1/imports/ece350-project/Wrapper.v
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/DXpipe.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/FDpipe.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/MWpipe.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/PWpipe.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/RAM.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/ROM.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/XMpipe.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/alu.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/bitwise_and.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/bitwise_not.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/bitwise_or.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/branchbypass.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/branchcomparator.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/bypassctrl.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/cla_32.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/cla_slice.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/comparator.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/counter.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/cpgenerate.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/decoder.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/dffe_ref.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/divider.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/eight_bit_cla.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/multdiv.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/multdivctrl.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/multiplier.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/mux_2.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/mux_2_2.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/mux_4.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/mux_4_2.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/mux_8.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/nextPC.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/partialProd.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/partialQuotient.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/processor.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/reg_32.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/regfile.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/secondctrl.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/servooutput.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/shift_left_logical.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/shift_right_arithmic.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/stallctrl.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/sum_unit.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/tristatebuf.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/sources_1/imports/ece350-project/Wrapper.v}
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -145,8 +151,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/constrs_1/new/NexysA7.xdc
-set_property used_in_implementation false [get_files D:/Study/Duke/+1/ECE350/Project/final_project/final_project.srcs/constrs_1/new/NexysA7.xdc]
+read_xdc {{C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/constrs_1/new/NexysA7.xdc}}
+set_property used_in_implementation false [get_files {{C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project_vivado/final_project.srcs/constrs_1/new/NexysA7.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

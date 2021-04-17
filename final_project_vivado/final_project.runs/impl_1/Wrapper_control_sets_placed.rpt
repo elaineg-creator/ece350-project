@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Thu Apr 15 20:23:58 2021
-| Host         : LAPTOP-V3KSF918 running 64-bit major release  (build 9200)
+| Date         : Sat Apr 17 00:02:37 2021
+| Host         : DESKTOP-CE0C5LI running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Wrapper_control_sets_placed.rpt
 | Design       : Wrapper
 | Device       : xc7a100t
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    16 |
-|    Minimum number of control sets                        |    16 |
+| Total control sets                                       |    13 |
+|    Minimum number of control sets                        |    13 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    48 |
+| Unused register locations in slices containing registers |    24 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,13 +39,13 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    16 |
-| >= 0 to < 4        |     4 |
-| >= 4 to < 6        |     1 |
-| >= 6 to < 8        |     0 |
+| Total control sets |    13 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     1 |
 | >= 8 to < 10       |     0 |
-| >= 10 to < 12      |     2 |
-| >= 12 to < 14      |     0 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     1 |
 | >= 14 to < 16      |     0 |
 | >= 16              |     9 |
 +--------------------+-------+
@@ -58,37 +58,34 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               6 |            4 |
-| No           | No                    | Yes                    |             161 |           67 |
+| No           | No                    | No                     |               8 |            8 |
+| No           | No                    | Yes                    |             162 |           66 |
 | No           | Yes                   | No                     |              16 |            4 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |             235 |          152 |
-| Yes          | Yes                   | No                     |              14 |            6 |
+| Yes          | No                    | Yes                    |             236 |          142 |
+| Yes          | Yes                   | No                     |              10 |            2 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+------------------+-------------------------------+--------------------------------+------------------+----------------+--------------+
-|   Clock Signal   |         Enable Signal         |        Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
-+------------------+-------------------------------+--------------------------------+------------------+----------------+--------------+
-|  clock_IBUF_BUFG |                               |                                |                1 |              1 |         1.00 |
-|  clk1kHz_BUFG    | CPU/SERVO2/count              | CPU/FD/IR/loop1[23].dff/reset2 |                1 |              1 |         1.00 |
-|  clk1kHz_BUFG    | CPU/SERVO3/count              | CPU/FD/IR/loop1[23].dff/reset3 |                1 |              1 |         1.00 |
-|  clk1kHz_BUFG    | CPU/SERVO1/count              | CPU/FD/IR/loop1[30].dff/reset1 |                1 |              2 |         2.00 |
-|  clk1kHz_BUFG    |                               |                                |                3 |              5 |         1.67 |
-|  clk1kHz_BUFG    | CPU/SECOND/count[9]_i_2_n_0   | CPU/FD/IR/loop1[30].dff/SR[0]  |                3 |             10 |         3.33 |
-|  clk1kHz_BUFG    | CPU/SECOND/countstatus        | reset_IBUF                     |                4 |             11 |         2.75 |
-|  clock_IBUF_BUFG |                               | clear                          |                4 |             16 |         4.00 |
-| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/en      | reset_IBUF                     |               29 |             32 |         1.10 |
-| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg_1 | reset_IBUF                     |               20 |             32 |         1.60 |
-| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg_3 | reset_IBUF                     |               19 |             32 |         1.68 |
-| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg_4 | reset_IBUF                     |               21 |             32 |         1.52 |
-| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg_2 | reset_IBUF                     |               27 |             32 |         1.19 |
-| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg   | reset_IBUF                     |               18 |             32 |         1.78 |
-| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg_0 | reset_IBUF                     |               14 |             32 |         2.29 |
-|  clk1kHz_BUFG    |                               | reset_IBUF                     |               67 |            161 |         2.40 |
-+------------------+-------------------------------+--------------------------------+------------------+----------------+--------------+
++------------------+-------------------------------+-------------------------------+------------------+----------------+--------------+
+|   Clock Signal   |         Enable Signal         |        Set/Reset Signal       | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------+-------------------------------+-------------------------------+------------------+----------------+--------------+
+|  clock_IBUF_BUFG |                               |                               |                1 |              1 |         1.00 |
+|  clk1kHz_BUFG    |                               |                               |                7 |              7 |         1.00 |
+|  clk1kHz_BUFG    | CPU/SECOND/count[9]_i_2_n_0   | CPU/FD/IR/loop1[30].dff/SR[0] |                2 |             10 |         5.00 |
+|  clk1kHz_BUFG    | CPU/SECOND/countstatus        | reset_IBUF                    |                3 |             12 |         4.00 |
+|  clock_IBUF_BUFG |                               | clear                         |                4 |             16 |         4.00 |
+| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg_3 | reset_IBUF                    |               13 |             32 |         2.46 |
+| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg_1 | reset_IBUF                    |               14 |             32 |         2.29 |
+| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/en      | reset_IBUF                    |               28 |             32 |         1.14 |
+| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg   | reset_IBUF                    |               21 |             32 |         1.52 |
+| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg_2 | reset_IBUF                    |               28 |             32 |         1.14 |
+| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg_4 | reset_IBUF                    |               14 |             32 |         2.29 |
+| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg_0 | reset_IBUF                    |               21 |             32 |         1.52 |
+|  clk1kHz_BUFG    |                               | reset_IBUF                    |               66 |            162 |         2.45 |
++------------------+-------------------------------+-------------------------------+------------------+----------------+--------------+
 
 
