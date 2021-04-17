@@ -10,11 +10,12 @@ always @(posedge clock) begin
             signal <= 1;
             count <= 0;
         end else begin
-            if(count < 1) begin
-                count <= count + 1;
-            end else if(count == 1) begin             //if 2 cycles passed, set signal to off (0)
-                signal <= 0;
-            end
+            // if(count < 1) begin
+            //     count <= count + 1;
+            // end else if(count == 1) begin             //if 2 cycles passed, set signal to off (0)
+            //     signal <= 0;
+            // end
+            signal <= 0;
         end
     end
 
