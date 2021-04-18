@@ -24,7 +24,7 @@
  *
  **/
 
-module Wrapper (clock, reset, start, stop, servo1, servo2, servo3, onLED, signal1LED, signal2LED);
+module Wrapper (clock, reset, start, stop, servo1, servo2, servo3, onLED, signal1LED, signal2LED, arduino_reset);
 	input clock, reset;
 	input start, stop;
 
@@ -36,7 +36,9 @@ module Wrapper (clock, reset, start, stop, servo1, servo2, servo3, onLED, signal
 
 	//servos
 	output servo1, servo2, servo3, onLED;
-	output signal1LED, signal2LED;
+	output signal1LED, signal2LED, arduino_reset;
+
+	assign arduino_reset = reset;
 
 
 	// ADD YOUR MEMORY FILE HERE
