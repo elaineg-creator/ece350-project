@@ -44,7 +44,7 @@ module Wrapper_tb #(parameter FILE = "overflow_basic1");
 
 	// Inputs to the processor
 	reg clock = 0, reset = 0;
-	reg start = 0;
+	reg start = 0, stop = 0;
 
 	// I/O for the processor
 	wire rwe, mwe;
@@ -53,7 +53,7 @@ module Wrapper_tb #(parameter FILE = "overflow_basic1");
 	wire[31:0] instAddr, instData, 
 		rData, regA, regB,
 		memAddr, memDataIn, memDataOut;
-	wire servo1, servo2, servo3, startLED, signal1LED, signal2LED;
+	wire servo1, servo2, servo3, onLED, signal1LED, signal2LED;
 
 	// Main Processing Unit
 	processor CPU(.clock(clock), .reset(reset), 
@@ -73,7 +73,7 @@ module Wrapper_tb #(parameter FILE = "overflow_basic1");
 		//servos
 		.servo1(servo1), .servo2(servo2), .servo3(servo3),
 		
-		.start(start), .startLED(startLED), .signal1LED(signal1LED), .signal2LED(signal2LED)); 
+		.start(start), .onLED(onLED), .signal1LED(signal1LED), .signal2LED(signal2LED), .stop(stop)); 
 	
 	// Instruction Memory (ROM)
 	ROM #(.MEMFILE({DIR, MEM_DIR, FILE, ".mem"}))
@@ -99,8 +99,12 @@ module Wrapper_tb #(parameter FILE = "overflow_basic1");
 	always
 		#500 clock = ~clock; 
 	always
-		#5000 start = ~start;
-
+		#500000 start = ~start;
+	always
+		#5000 stop = ~stop;
+	always
+		#5000000 reset = ~reset;	
+	
 	//////////////////
 	// Test Harness //
 	//////////////////

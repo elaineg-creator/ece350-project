@@ -32,8 +32,10 @@ MWpipe.v
 nextPC.v
 partialProd.v
 partialQuotient.v
+play_sound.v
 processor.v
 pwm.v
+PWMSerializer.v
 pwm_tb.v
 PWpipe.v
 RAM.v

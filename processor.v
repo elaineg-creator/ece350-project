@@ -45,7 +45,7 @@ module processor(
     servo1, servo2, servo3,
 
     //start
-    start, startLED,
+    start, stop, onLED,
     signal1LED, signal2LED
 	 
 	);
@@ -76,12 +76,19 @@ module processor(
     assign signal2LED = signal2;
 
     //start
-    input start;
-    output startLED;
-    wire startOn;
+    input start, stop;
+    output onLED;
+    reg on = 0;
+    
+    assign onLED = on;
 
-    assign startOn = start;
-    assign startLED = startOn;
+    always @(posedge clock) begin
+        if(start) begin
+            on <= 1;
+        end else if(stop) begin
+            on <= 0;
+        end
+    end
 
 	/* YOUR CODE STARTS HERE */
 
@@ -116,7 +123,7 @@ module processor(
     //second counter, if countstatus is 1, stall
     wire countstatus, countreset;
     assign countreset = (ir2DX[31] & ir2DX[30] & ir2DX[29] & ir2DX[28] & ir2DX[27]);
-    secondctrl SECOND(countreset, clock, countstatus);
+    secondctrl SECOND(countreset, clock, countstatus, on, reset);
 
     //output 1 to servos after second/minute/hour passed for 2 cycles
     //each servo will have different rd associated with it 
@@ -213,7 +220,7 @@ module processor(
     branchbypass BRANCHBY(new2DX, new2XM, ir2MW, finalir, selectA ,selectB, ctrl_writeEnable);
 
     stallctrl STALLING(ir2DX, ir2XM, ir2MW, stall, MWstall, (multdivStatus || (ctrl_MULT || ctrl_DIV)), pqIRin, data_resultRDY);
-    nextPC NEXTPC(pcOut, ir2XM, branchImme, isNotEqual, isLessThan, in2ALUB, (stall || MWstall || countstatus), pcNext, flushJ, flushB, ir2MW, finalir, ir2DX, start, clock); 
+    nextPC NEXTPC(pcOut, ir2XM, branchImme, isNotEqual, isLessThan, in2ALUB, (stall || MWstall || countstatus), pcNext, flushJ, flushB, ir2MW, finalir, ir2DX, clock, on); 
 	
 	/* END CODE */
 

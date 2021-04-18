@@ -24,9 +24,9 @@
  *
  **/
 
-module Wrapper (clock, reset, start, servo1, servo2, servo3, startLED, signal1LED, signal2LED);
+module Wrapper (clock, reset, start, stop, servo1, servo2, servo3, onLED, signal1LED, signal2LED);
 	input clock, reset;
-	input start;
+	input start, stop;
 
 	wire rwe, mwe;
 	wire[4:0] rd, rs1, rs2;
@@ -35,7 +35,7 @@ module Wrapper (clock, reset, start, servo1, servo2, servo3, startLED, signal1LE
 		memAddr, memDataIn, memDataOut;
 
 	//servos
-	output servo1, servo2, servo3, startLED;
+	output servo1, servo2, servo3, onLED;
 	output signal1LED, signal2LED;
 
 
@@ -81,7 +81,7 @@ module Wrapper (clock, reset, start, servo1, servo2, servo3, startLED, signal1LE
 		//servos
 		.servo1(servo1), .servo2(servo2), .servo3(servo3),
 		
-		.start(start), .startLED(startLED), .signal1LED(signal1LED), .signal2LED(signal2LED));  
+		.start(start), .stop(stop), .onLED(startLED), .signal1LED(signal1LED), .signal2LED(signal2LED));  
 	
 	// Instruction Memory (ROM)
 	ROM #(.MEMFILE({INSTR_FILE, ".mem"}))

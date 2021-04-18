@@ -1,6 +1,6 @@
-module nextPC(pc, ir, im, bne, blt, regD, stall, PCnext, flushJ, flushB, ir2, ir3, ir4, start, clock);
+module nextPC(pc, ir, im, bne, blt, regD, stall, PCnext, flushJ, flushB, ir2, ir3, ir4, clock, on);
     input [31:0] pc, ir, im, regD, ir2, ir3, ir4;
-    input bne, blt ,stall, start, clock;
+    input bne, blt ,stall, clock, on;
     output[31:0] PCnext;
     output flushJ, flushB;
     wire isB, isBNE, isBLT, isBEX, rstatus, isJ1, isJ2, ctrl1, ctrl2, cout1, cout2, XMsetx, MWsetx;
@@ -30,13 +30,13 @@ module nextPC(pc, ir, im, bne, blt, regD, stall, PCnext, flushJ, flushB, ir2, ir
     assign isJ2 = (~ir[31] & ~ir[30] & ir[29] & ~ir[28] & ~ir[27]);
     assign PCnoStall = isJ2 ? regD : muxJ1;        //is the instruction JR?
 
-    reg on = 0;
+    //reg on = 0;
     //reg [31:0] PCnext = 0;
-    always @(posedge clock) begin
-        if(start) begin
-            on <= 1;
-        end
-    end
+    // always @(posedge clock) begin
+    //     if(start) begin
+    //         on <= 1;
+    //     end
+    // end
 
 
     assign PCnext = (stall || ~on) ? pc : PCnoStall;
