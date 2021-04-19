@@ -46,7 +46,10 @@ module processor(
 
     //start
     start, stop, onLED,
-    signal1LED, signal2LED, arduino_reset
+    signal1LED, signal2LED, arduino_reset,
+
+    //system clock
+    sound_signal
 	 
 	);
 
@@ -92,6 +95,9 @@ module processor(
             on <= 0;
         end
     end
+
+    //sound
+    output sound_signal;
 
 	/* YOUR CODE STARTS HERE */
 
@@ -144,6 +150,11 @@ module processor(
     assign reset3 = (ir2DX[31] & ir2DX[30] & ~ir2DX[29] & ~ir2DX[28] & ~ir2DX[27] & ~ir2DX[26] & ~ir2DX[25] & ~ir2DX[24] & ir2DX[23] & ir2DX[22]);     //output for seconds motor, servo 3 (r3)
     servooutput SERVO3(reset3, clock, signal3);
     assign servo3 = signal3;
+
+    //sound
+    //wire sound_signal;
+    assign sound_signal = (ir2DX[31] & ir2DX[30] & ir2DX[29] & ir2DX[28] & ~ir2DX[27]);
+    
 
     //D/X to X/M
     wire [31:0] pc2MUX, regAOut, regBOut, ir2XM, in2ALUB, sxImme, bypassB, in2ALUA;

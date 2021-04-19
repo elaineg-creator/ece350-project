@@ -24,7 +24,7 @@
  *
  **/
 
-module Wrapper (clock, reset, start, stop, servo1, servo2, servo3, onLED, signal1LED, signal2LED, arduino_reset);
+module Wrapper (clock, reset, start, stop, servo1, servo2, servo3, onLED, signal1LED, signal2LED, arduino_reset, audioOut, audioEn);
 	input clock, reset;
 	input start, stop;
 
@@ -38,11 +38,15 @@ module Wrapper (clock, reset, start, stop, servo1, servo2, servo3, onLED, signal
 	output servo1, servo2, servo3, onLED;
 	output signal1LED, signal2LED, arduino_reset;
 
+	//sound
+	wire sound_signal;
+	output audioOut, audioEn;
+
 	//assign arduino_reset = reset;
 
 
 	// ADD YOUR MEMORY FILE HERE
-	localparam INSTR_FILE = "moreminutes";
+	localparam INSTR_FILE = "minutesound";
 
 	//clock divider for 1kHz
 
@@ -83,7 +87,11 @@ module Wrapper (clock, reset, start, stop, servo1, servo2, servo3, onLED, signal
 		//servos
 		.servo1(servo1), .servo2(servo2), .servo3(servo3),
 		
-		.start(start), .stop(stop), .onLED(onLED), .signal1LED(signal1LED), .signal2LED(signal2LED), .arduino_reset(arduino_reset));  
+		.start(start), .stop(stop), .onLED(onLED), .signal1LED(signal1LED), .signal2LED(signal2LED), .arduino_reset(arduino_reset),
+		
+		.sound_signal(sound_signal)); 
+
+	play_sound sound(.clock(clock), .signal(sound_signal), .audioOut(audioOut), .audioEn(audioEn));	 
 	
 	// Instruction Memory (ROM)
 	ROM #(.MEMFILE({INSTR_FILE, ".mem"}))

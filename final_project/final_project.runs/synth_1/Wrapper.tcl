@@ -94,11 +94,13 @@ read_mem {
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/play_sound.mem}
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/minute.mem}
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/Test Files/Memory Files/moreminutes.mem}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/Test Files/Memory Files/minutesound.mem}
 }
 read_verilog -library xil_defaultlib {
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/DXpipe.v}
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/FDpipe.v}
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/MWpipe.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/PWMSerializer.v}
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/PWpipe.v}
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/RAM.v}
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/ROM.v}
@@ -130,6 +132,7 @@ read_verilog -library xil_defaultlib {
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/nextPC.v}
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/partialProd.v}
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/partialQuotient.v}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/play_sound.v}
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/processor.v}
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/reg_32.v}
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/regfile.v}
