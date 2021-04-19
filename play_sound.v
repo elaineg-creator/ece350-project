@@ -1,62 +1,61 @@
-
 module play_sound(
-    input        clk, 		// System Clock Input 100 Mhz
+    input        sys_clk, 		// System Clock Input 100 Mhz
+    input        proc_clk,
     input        signal,   // Pulse when reaching 1 minute
     output       audioOut,	// PWM signal to the audio jack
     output       audioEn);	// Audio Enable
 
-	localparam MHz = 1000000;
-	localparam SYSTEM_FREQ = 100*MHz; // System clock frequency
+    localparam kHz = 1000;
+	localparam SYSTEM_FREQ = 1*kHz; //system freq (in processor)
 
-	assign audioEn = (index < 5 && index > 0);  // Change this number to reflect how many notes
+    assign audioEn = index < 5;  // Enable Audio Output
 
-	// Initialize the frequency array.
-	reg[12:0] FREQs[0:63];
+    reg[10:0] FREQs[0:5];
 	initial begin
-		$readmemh("play_sound.mem", FREQs);
+		$readmemh("FREQs.mem", FREQs);
 	end
 
+    // set threshold for the frequencies
+	wire[31:0] threshold;
+	assign threshold = (SYSTEM_FREQ / FREQs[index]) >> 1;
 
-  // Calculate counter threshold with respect to frequency given. 1s = 1Hz
-	wire[31:0] threshold, threshold1s;
-	assign threshold = (SYSTEM_FREQ / (FREQs[index] * 2)) - 1;
-  assign threshold1s = SYSTEM_FREQ / 2 - 1;
+    reg[2:0] index = 5; //last index or whatever
+    reg[31:0] index_counter = 0;
+    always @(posedge proc_clk) begin
+        if(signal) begin
+            index <= 0;
+            index_counter <= 0;
+        end else if(index < 5) begin
+            if(index_counter < 499) begin
+                index_counter <= index_counter + 1;
+            end else if(index_counter == 500) begin
+                index_counter <= 0;
+                index <= index + 1;
+            end 
+        end
+    end
 
-  // Slow down the clock to frequency of the note
-	reg clkWanted = 0;
-  reg clk1s = 0;
+	// set counter
+	reg sound_clock = 0;
 	reg[31:0] counter = 0;
-  reg[31:0] counter1s = 0;
-	always @(posedge clk) begin
-		if(counter < threshold)
+	always @(posedge sys_clk) begin
+		if (counter < threshold - 1)
 			counter <= counter + 1;
 		else begin
-			counter <= 0;
-			clkWanted <= ~clkWanted;
+            counter <= 0;
+            sound_clock <= ~sound_clock;
 		end
 	end
 
-  // Slow down the clock to 1Hz.
-  // This is used so each note is played 1s.
-  always @(posedge clk) begin
-    if(counter1s < threshold1s)
-      counter1s <= counter1s + 1;
-    else begin
-      counter1s <= 0;
-      clk1s <= ~clk1s;
-    end
-  end
-
-  // Advance index by 1 each second, which changes the frequency that's read
-  // in the frequency array.
-  wire [5:0] counterout, index;
-  counter whichnote (clk1s, signal, counterout);
-  assign index = &counterout ? 6'b0 : counterout;
-
-
-  // Set duty cycle and use PWM serializer.
+	// Use mux to output set duty cycle to 90% or 10%
 	wire[6:0] duty_cycle;
-	assign duty_cycle = clkWanted ?  7'd90 : 7'd10;
-	PWMSerializer pwm(.clk(clk), .reset(1'b0), .duty_cycle(duty_cycle), .signal(audioOut));
+	assign duty_cycle = sound_clock ? 7'd90 : 7'd10; // 90% on high clock, 10% on low
+
+	// Implementing the PWMSerializer module
+	PWMSerializer pmw(
+		.clk(sys_clk),
+		.reset(1'b0),
+		.duty_cycle(duty_cycle),
+		.signal(audioOut));
 
 endmodule

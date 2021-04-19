@@ -38,11 +38,11 @@ module Wrapper (clock, reset, start, stop, servo1, servo2, servo3, onLED, signal
 	output servo1, servo2, servo3, onLED;
 	output signal1LED, signal2LED, arduino_reset;
 
-	assign arduino_reset = reset;
+	//assign arduino_reset = reset;
 
 
 	// ADD YOUR MEMORY FILE HERE
-	localparam INSTR_FILE = "minute";
+	localparam INSTR_FILE = "moreminutes";
 
 	//clock divider for 1kHz
 
@@ -83,7 +83,7 @@ module Wrapper (clock, reset, start, stop, servo1, servo2, servo3, onLED, signal
 		//servos
 		.servo1(servo1), .servo2(servo2), .servo3(servo3),
 		
-		.start(start), .stop(stop), .onLED(startLED), .signal1LED(signal1LED), .signal2LED(signal2LED));  
+		.start(start), .stop(stop), .onLED(onLED), .signal1LED(signal1LED), .signal2LED(signal2LED), .arduino_reset(arduino_reset));  
 	
 	// Instruction Memory (ROM)
 	ROM #(.MEMFILE({INSTR_FILE, ".mem"}))

@@ -1,0 +1,91 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Sun Apr 18 19:51:14 2021
+| Host         : DESKTOP-CE0C5LI running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Wrapper_control_sets_placed.rpt
+| Design       : Wrapper
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    13 |
+|    Minimum number of control sets                        |    13 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    24 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    13 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     9 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               8 |            6 |
+| No           | No                    | Yes                    |             162 |           68 |
+| No           | Yes                   | No                     |              16 |            4 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |             236 |          140 |
+| Yes          | Yes                   | No                     |              10 |            3 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------+-------------------------------+-------------------------------+------------------+----------------+--------------+
+|   Clock Signal   |         Enable Signal         |        Set/Reset Signal       | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------+-------------------------------+-------------------------------+------------------+----------------+--------------+
+|  clock_IBUF_BUFG |                               |                               |                1 |              1 |         1.00 |
+|  clk1kHz_BUFG    |                               |                               |                5 |              7 |         1.40 |
+|  clk1kHz_BUFG    | CPU/SECOND/count              | CPU/FD/IR/loop1[30].dff/SR[0] |                3 |             10 |         3.33 |
+|  clk1kHz_BUFG    | CPU/SECOND/countstatus        | arduino_reset_OBUF            |                3 |             12 |         4.00 |
+|  clock_IBUF_BUFG |                               | clear                         |                4 |             16 |         4.00 |
+| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg_3 | arduino_reset_OBUF            |               14 |             32 |         2.29 |
+| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg_2 | arduino_reset_OBUF            |               26 |             32 |         1.23 |
+| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg_4 | arduino_reset_OBUF            |               18 |             32 |         1.78 |
+| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg_0 | arduino_reset_OBUF            |               14 |             32 |         2.29 |
+| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg_1 | arduino_reset_OBUF            |               16 |             32 |         2.00 |
+| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/en      | arduino_reset_OBUF            |               31 |             32 |         1.03 |
+| ~clk1kHz_BUFG    | RegisterFile/dec32/s4/q_reg   | arduino_reset_OBUF            |               18 |             32 |         1.78 |
+|  clk1kHz_BUFG    |                               | arduino_reset_OBUF            |               68 |            162 |         2.38 |
++------------------+-------------------------------+-------------------------------+------------------+----------------+--------------+
+
+

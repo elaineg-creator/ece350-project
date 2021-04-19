@@ -6,11 +6,10 @@ Servo minservo;  // create servo object to control a servo
 
 int secpos = 0;    // variable to store the second servo position
 int minpos = 0;    // variable to store the minute servo position
-//int val = 0; 
-//int state = 0; 
+
 const int secondIn = 2;
 const int minIn = 3;
-//int secondTurn = 0;
+const int resetpin = 18;
 
 
 void setup() {
@@ -18,8 +17,10 @@ void setup() {
   minservo.attach(6);  // attaches the servo on pin 6 to the servo object
   pinMode(secondIn, INPUT_PULLUP);
   pinMode(minIn, INPUT_PULLUP);
+  pinMode(resetpin, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(secondIn), secondTurn, RISING);
   attachInterrupt(digitalPinToInterrupt(minIn), minTurn, RISING);
+  attachInterrupt(digitalPinToInterrupt(resetpin), reset, RISING);
   secservo.write(0);
   minservo.write(0); 
 //  delay(1000);
@@ -53,4 +54,13 @@ void minTurn() {
     Serial.print("minute TURNED: ");
     secservo.write(minpos);
   }
+}
+
+void reset() {
+  secservo.write(0);
+  minservo.write(0); 
+  //delay(500);
+  Serial.println("reset");
+  secpos = 0;
+  minpos = 0;
 }

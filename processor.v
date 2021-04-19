@@ -46,7 +46,7 @@ module processor(
 
     //start
     start, stop, onLED,
-    signal1LED, signal2LED
+    signal1LED, signal2LED, arduino_reset
 	 
 	);
 
@@ -77,10 +77,13 @@ module processor(
 
     //start
     input start, stop;
-    output onLED;
+    output onLED, arduino_reset;
+    wire reset_arduino;
     reg on = 0;
     
     assign onLED = on;
+    assign reset_arduino = reset;
+    assign arduino_reset = reset_arduino;
 
     always @(posedge clock) begin
         if(start) begin
