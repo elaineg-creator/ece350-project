@@ -125,7 +125,7 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 1
-  set_param synth.incrementalSynthesisCache C:/Users/guoel/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-22016-DESKTOP-CE0C5LI/incrSyn
+  set_param synth.incrementalSynthesisCache C:/Users/guoel/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-18268-DESKTOP-CE0C5LI/incrSyn
   set_param xicom.use_bs_reader 1
   open_checkpoint Wrapper_routed.dcp
   set_property webtalk.parent_dir {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/final_project/final_project.cache/wt} [current_project]

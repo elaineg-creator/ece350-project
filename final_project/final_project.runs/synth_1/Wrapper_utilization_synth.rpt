@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Sun Apr 18 23:02:01 2021
+| Date         : Thu Apr 22 17:48:04 2021
 | Host         : DESKTOP-CE0C5LI running 64-bit major release  (build 9200)
 | Command      : report_utilization -file Wrapper_utilization_synth.rpt -pb Wrapper_utilization_synth.pb
 | Design       : Wrapper
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 1761 |     0 |     63400 |  2.78 |
-|   LUT as Logic          | 1761 |     0 |     63400 |  2.78 |
+| Slice LUTs*             | 1746 |     0 |     63400 |  2.75 |
+|   LUT as Logic          | 1746 |     0 |     63400 |  2.75 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
 | Slice Registers         |  739 |     0 |    126800 |  0.58 |
 |   Register as Flip Flop |  739 |     0 |    126800 |  0.58 |
@@ -148,11 +148,11 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDCE     |  558 |        Flop & Latch |
-| LUT6     |  538 |                 LUT |
-| LUT2     |  446 |                 LUT |
-| LUT4     |  369 |                 LUT |
-| LUT5     |  319 |                 LUT |
-| LUT3     |  272 |                 LUT |
+| LUT6     |  527 |                 LUT |
+| LUT2     |  453 |                 LUT |
+| LUT4     |  361 |                 LUT |
+| LUT5     |  314 |                 LUT |
+| LUT3     |  274 |                 LUT |
 | FDRE     |  181 |        Flop & Latch |
 | CARRY4   |  129 |          CarryLogic |
 | LUT1     |  105 |                 LUT |

@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Sun Apr 18 23:02:59 2021
+| Date         : Thu Apr 22 17:49:12 2021
 | Host         : DESKTOP-CE0C5LI running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Wrapper_control_sets_placed.rpt
 | Design       : Wrapper
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              99 |           41 |
-| No           | No                    | Yes                    |             299 |          120 |
+| No           | No                    | No                     |              99 |           43 |
+| No           | No                    | Yes                    |             299 |          117 |
 | No           | Yes                   | No                     |              48 |           12 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |             259 |          159 |
-| Yes          | Yes                   | No                     |              36 |           10 |
+| Yes          | No                    | Yes                    |             259 |          135 |
+| Yes          | Yes                   | No                     |              36 |            9 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,35 +73,35 @@ Table of Contents
 +--------------------------------------------------+-------------------------------+-------------------------------------------------+------------------+----------------+--------------+
 |                   Clock Signal                   |         Enable Signal         |                 Set/Reset Signal                | Slice Load Count | Bel Load Count | Bels / Slice |
 +--------------------------------------------------+-------------------------------+-------------------------------------------------+------------------+----------------+--------------+
+|  CPU/MULTDIV/MULTDIV/BOOTH/COUNTER/dff1/q_reg_0  |                               |                                                 |                1 |              1 |         1.00 |
+|  CPU/MULTDIV/MULTDIV/BOOTH/COUNTER/dff2/q_reg_0  |                               |                                                 |                1 |              1 |         1.00 |
+|  CPU/MULTDIV/MULTDIV/BOOTH/COUNTER/dff3/q_reg_0  |                               |                                                 |                1 |              1 |         1.00 |
+|  CPU/MULTDIV/MULTDIV/BOOTH/COUNTER/dff4/q_reg_0  |                               |                                                 |                1 |              1 |         1.00 |
+|  CPU/MULTDIV/MULTDIV/BOOTH/COUNTER/dff0/q_reg_0  |                               |                                                 |                1 |              1 |         1.00 |
 |  CPU/MULTDIV/MULTDIV/DIVIDE/COUNTER/dff1/q_reg_0 |                               |                                                 |                1 |              1 |         1.00 |
 |  CPU/MULTDIV/MULTDIV/DIVIDE/COUNTER/dff2/q_reg_0 |                               |                                                 |                1 |              1 |         1.00 |
 |  CPU/MULTDIV/MULTDIV/DIVIDE/COUNTER/dff0/q_reg_0 |                               |                                                 |                1 |              1 |         1.00 |
 |  CPU/MULTDIV/MULTDIV/DIVIDE/COUNTER/dff3/q_reg_0 |                               |                                                 |                1 |              1 |         1.00 |
-|  CPU/MULTDIV/MULTDIV/BOOTH/COUNTER/dff1/q_reg_0  |                               |                                                 |                1 |              1 |         1.00 |
 |  CPU/MULTDIV/MULTDIV/DIVIDE/COUNTER/dff4/q_reg_0 |                               |                                                 |                1 |              1 |         1.00 |
-|  CPU/MULTDIV/MULTDIV/BOOTH/COUNTER/dff0/q_reg_0  |                               |                                                 |                1 |              1 |         1.00 |
-|  CPU/MULTDIV/MULTDIV/BOOTH/COUNTER/dff2/q_reg_0  |                               |                                                 |                1 |              1 |         1.00 |
-|  CPU/MULTDIV/MULTDIV/BOOTH/COUNTER/dff3/q_reg_0  |                               |                                                 |                1 |              1 |         1.00 |
-|  CPU/MULTDIV/MULTDIV/BOOTH/COUNTER/dff4/q_reg_0  |                               |                                                 |                1 |              1 |         1.00 |
-|  clk1kHz_BUFG                                    |                               | CPU/MULTDIV/MULTDIV/DIVIDE/COUNTER/dff0/q_reg_1 |                1 |              1 |         1.00 |
-|  clk1kHz_BUFG                                    |                               | CPU/MULTDIV/MULTDIV/BOOTH/COUNTER/dff0/q_reg_1  |                1 |              1 |         1.00 |
 | ~clock_IBUF_BUFG                                 |                               |                                                 |                1 |              1 |         1.00 |
-|  clk1kHz_BUFG                                    | CPU/SECOND/count              | CPU/FD/IR/loop1[27].dff/q_reg_1[0]              |                3 |             10 |         3.33 |
+|  clk1kHz_BUFG                                    |                               | CPU/MULTDIV/MULTDIV/BOOTH/COUNTER/dff0/q_reg_1  |                1 |              1 |         1.00 |
+|  clk1kHz_BUFG                                    |                               | CPU/MULTDIV/MULTDIV/DIVIDE/COUNTER/dff0/q_reg_1 |                1 |              1 |         1.00 |
+|  clk1kHz_BUFG                                    | CPU/SECOND/count              | CPU/FD/IR/loop1[27].dff/q_reg_1[0]              |                2 |             10 |         5.00 |
+|  clock_IBUF_BUFG                                 |                               |                                                 |                6 |             14 |         2.33 |
 |  clk1kHz_BUFG                                    | CPU/STALLING/status_reg       | arduino_reset_OBUF                              |                4 |             14 |         3.50 |
-|  clock_IBUF_BUFG                                 |                               |                                                 |                7 |             14 |         2.00 |
 |  clock_IBUF_BUFG                                 |                               | counter[0]_i_1_n_0                              |                4 |             16 |         4.00 |
-|  clk1kHz_BUFG                                    | CPU/STALLING/q_reg            | arduino_reset_OBUF                              |               14 |             21 |         1.50 |
+|  clk1kHz_BUFG                                    | CPU/STALLING/q_reg            | arduino_reset_OBUF                              |               15 |             21 |         1.40 |
 |  clock_IBUF_BUFG                                 | sound/index_counter           | CPU/FD/IR/loop1[31].dff/SR[0]                   |                7 |             26 |         3.71 |
-| ~clk1kHz_BUFG                                    | RegisterFile/dec32/s4/q_reg_2 | arduino_reset_OBUF                              |               26 |             32 |         1.23 |
-| ~clk1kHz_BUFG                                    | RegisterFile/dec32/s4/en      | arduino_reset_OBUF                              |               31 |             32 |         1.03 |
-| ~clk1kHz_BUFG                                    | RegisterFile/dec32/s4/q_reg_0 | arduino_reset_OBUF                              |               16 |             32 |         2.00 |
-| ~clk1kHz_BUFG                                    | RegisterFile/dec32/s4/q_reg_4 | arduino_reset_OBUF                              |               16 |             32 |         2.00 |
-| ~clk1kHz_BUFG                                    | RegisterFile/dec32/s4/q_reg   | arduino_reset_OBUF                              |               17 |             32 |         1.88 |
-| ~clk1kHz_BUFG                                    | RegisterFile/dec32/s4/q_reg_3 | arduino_reset_OBUF                              |               18 |             32 |         1.78 |
-| ~clk1kHz_BUFG                                    | RegisterFile/dec32/s4/q_reg_1 | arduino_reset_OBUF                              |               17 |             32 |         1.88 |
 |  clock_IBUF_BUFG                                 |                               | sound/clear                                     |                8 |             32 |         4.00 |
-|  clk1kHz_BUFG                                    |                               |                                                 |               23 |             74 |         3.22 |
-|  clk1kHz_BUFG                                    |                               | arduino_reset_OBUF                              |              118 |            297 |         2.52 |
+| ~clk1kHz_BUFG                                    | RegisterFile/dec32/s4/en      | arduino_reset_OBUF                              |               27 |             32 |         1.19 |
+| ~clk1kHz_BUFG                                    | RegisterFile/dec32/s4/q_reg_3 | arduino_reset_OBUF                              |               20 |             32 |         1.60 |
+| ~clk1kHz_BUFG                                    | RegisterFile/dec32/s4/q_reg_1 | arduino_reset_OBUF                              |               11 |             32 |         2.91 |
+| ~clk1kHz_BUFG                                    | RegisterFile/dec32/s4/q_reg_0 | arduino_reset_OBUF                              |                8 |             32 |         4.00 |
+| ~clk1kHz_BUFG                                    | RegisterFile/dec32/s4/q_reg   | arduino_reset_OBUF                              |               15 |             32 |         2.13 |
+| ~clk1kHz_BUFG                                    | RegisterFile/dec32/s4/q_reg_4 | arduino_reset_OBUF                              |               13 |             32 |         2.46 |
+| ~clk1kHz_BUFG                                    | RegisterFile/dec32/s4/q_reg_2 | arduino_reset_OBUF                              |               22 |             32 |         1.45 |
+|  clk1kHz_BUFG                                    |                               |                                                 |               26 |             74 |         2.85 |
+|  clk1kHz_BUFG                                    |                               | arduino_reset_OBUF                              |              115 |            297 |         2.58 |
 +--------------------------------------------------+-------------------------------+-------------------------------------------------+------------------+----------------+--------------+
 
 

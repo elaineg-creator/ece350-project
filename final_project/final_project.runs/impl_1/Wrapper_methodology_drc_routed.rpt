@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Sun Apr 18 23:03:37 2021
+| Date         : Thu Apr 22 17:49:50 2021
 | Host         : DESKTOP-CE0C5LI running 64-bit major release  (build 9200)
 | Command      : report_methodology -file Wrapper_methodology_drc_routed.rpt -pb Wrapper_methodology_drc_routed.pb -rpx Wrapper_methodology_drc_routed.rpx
 | Design       : Wrapper
@@ -100,7 +100,7 @@ Related violations: <none>
 
 TIMING-17#14 Critical Warning
 Non-clocked sequential cell  
-The clock pin CPU/DX/IR/loop1[5].dff/q_reg/C is not reached by a timing clock
+The clock pin CPU/DX/IR/loop1[6].dff/q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#15 Critical Warning
@@ -3750,12 +3750,12 @@ Related violations: <none>
 
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell CPU/MULTDIV/MULTDIV/BOOTH/COUNTER/dff0/q_i_2__64, with 2 or more inputs, drives asynchronous preset/clear pin(s) CPU/MULTDIV/MULTDIV/BOOTH/test/q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell CPU/MULTDIV/MULTDIV/BOOTH/COUNTER/dff0/q_i_2__59, with 2 or more inputs, drives asynchronous preset/clear pin(s) CPU/MULTDIV/MULTDIV/BOOTH/test/q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#2 Warning
 LUT drives async reset alert  
-LUT cell CPU/MULTDIV/MULTDIV/DIVIDE/COUNTER/dff0/q_i_2__65, with 2 or more inputs, drives asynchronous preset/clear pin(s) CPU/MULTDIV/MULTDIV/DIVIDE/test/q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell CPU/MULTDIV/MULTDIV/DIVIDE/COUNTER/dff0/q_i_2__60, with 2 or more inputs, drives asynchronous preset/clear pin(s) CPU/MULTDIV/MULTDIV/DIVIDE/test/q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 

@@ -71,7 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 1
-set_param synth.incrementalSynthesisCache C:/Users/guoel/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-22016-DESKTOP-CE0C5LI/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/guoel/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-18268-DESKTOP-CE0C5LI/incrSyn
 set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
@@ -95,6 +95,8 @@ read_mem {
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/minute.mem}
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/Test Files/Memory Files/moreminutes.mem}
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/Test Files/Memory Files/minutesound.mem}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/Test Files/Memory Files/finalprogram.mem}
+  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/Test Files/Memory Files/final.mem}
 }
 read_verilog -library xil_defaultlib {
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/DXpipe.v}

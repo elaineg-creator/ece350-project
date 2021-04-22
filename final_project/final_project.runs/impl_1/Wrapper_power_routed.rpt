@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Sun Apr 18 23:03:38 2021
+| Date             : Thu Apr 22 17:49:51 2021
 | Host             : DESKTOP-CE0C5LI running 64-bit major release  (build 9200)
 | Command          : report_power -file Wrapper_power_routed.rpt -pb Wrapper_power_summary_routed.pb -rpx Wrapper_power_routed.rpx
 | Design           : Wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 22.008 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 24.320 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 21.210                           |
+| Dynamic (W)              | 23.522                           |
 | Device Static (W)        | 0.798                            |
 | Effective TJA (C/W)      | 4.6                              |
 | Max Ambient (C)          | 0.0                              |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     9.047 |     3272 |       --- |             --- |
-|   LUT as Logic |     8.113 |     1642 |     63400 |            2.59 |
-|   CARRY4       |     0.719 |      129 |     15850 |            0.81 |
-|   Register     |     0.190 |      741 |    126800 |            0.58 |
+| Slice Logic    |    10.352 |     3257 |       --- |             --- |
+|   LUT as Logic |     9.443 |     1619 |     63400 |            2.55 |
+|   CARRY4       |     0.673 |      129 |     15850 |            0.81 |
+|   Register     |     0.209 |      741 |    126800 |            0.58 |
 |   BUFG         |     0.018 |        2 |        32 |            6.25 |
-|   F7/F8 Muxes  |     0.006 |        8 |     63400 |            0.01 |
+|   F7/F8 Muxes  |     0.008 |        8 |     63400 |            0.01 |
 |   Others       |     0.000 |      471 |       --- |             --- |
-| Signals        |     8.312 |     2521 |       --- |             --- |
+| Signals        |     9.901 |     2506 |       --- |             --- |
 | Block RAM      |     0.536 |        2 |       135 |            1.48 |
-| I/O            |     3.316 |       13 |       210 |            6.19 |
+| I/O            |     2.733 |       13 |       210 |            6.19 |
 | Static Power   |     0.798 |          |           |                 |
-| Total          |    22.008 |          |           |                 |
+| Total          |    24.320 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |    18.426 |      17.863 |      0.563 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.214 |       0.121 |      0.093 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.939 |       0.935 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |    21.320 |      20.757 |      0.563 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.193 |       0.100 |      0.093 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.774 |       0.770 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -140,164 +140,165 @@ Table of Contents
 +---------------------+-----------+
 | Name                | Power (W) |
 +---------------------+-----------+
-| Wrapper             |    21.210 |
-|   CPU               |     7.590 |
-|     ALU2A           |     0.198 |
-|       second        |     0.198 |
-|     ALU2B           |     0.079 |
-|       second        |     0.079 |
-|     BRANCHA         |     0.166 |
-|       second        |     0.166 |
-|     BRANCHB         |     0.126 |
-|       second        |     0.126 |
-|     DX              |     3.075 |
-|       IR            |     2.957 |
+| Wrapper             |    23.522 |
+|   CPU               |    11.382 |
+|     ALU2A           |     0.336 |
+|       second        |     0.336 |
+|     ALU2B           |     0.155 |
+|       second        |     0.155 |
+|     BRANCHA         |     0.285 |
+|       second        |     0.285 |
+|     BRANCHB         |     0.234 |
+|       second        |     0.234 |
+|     DX              |     4.840 |
+|       IR            |     4.706 |
 |       PC            |     0.103 |
-|       regA          |     0.007 |
-|       regB          |     0.007 |
-|     FD              |     1.798 |
-|       IR            |     1.247 |
-|       PC            |     0.551 |
-|     MULTDIV         |     0.796 |
-|       MULTDIV       |     0.796 |
-|     MW              |     0.469 |
-|       IR            |     0.030 |
-|       O             |     0.356 |
-|       PC            |     0.083 |
-|     PC              |     0.441 |
-|       loop1[0].dff  |     0.061 |
-|       loop1[10].dff |     0.038 |
-|       loop1[11].dff |     0.037 |
-|       loop1[1].dff  |     0.027 |
-|       loop1[2].dff  |     0.025 |
-|       loop1[3].dff  |     0.038 |
-|       loop1[4].dff  |     0.043 |
-|       loop1[5].dff  |     0.050 |
-|       loop1[6].dff  |     0.024 |
-|       loop1[7].dff  |     0.026 |
-|       loop1[8].dff  |     0.031 |
-|       loop1[9].dff  |     0.041 |
-|     PW              |     0.092 |
-|       OVERFLOW      |     0.029 |
-|       PQ            |     0.047 |
-|       RDY           |     0.016 |
-|     SECOND          |     0.050 |
-|     STALLING        |     0.017 |
-|     XM              |     0.251 |
-|       IR            |     0.063 |
-|       O             |     0.078 |
-|       PC            |     0.110 |
-|   InstMem           |     0.615 |
-|   RegisterFile      |     1.212 |
-|     dec32           |     0.149 |
-|       s4            |     0.149 |
-|     loop1[1].regs   |     0.081 |
+|       regA          |     0.016 |
+|       regB          |     0.015 |
+|     FD              |     2.877 |
+|       IR            |     2.144 |
+|       PC            |     0.733 |
+|     MULTDIV         |     0.847 |
+|       MULTDIV       |     0.847 |
+|     MW              |     0.670 |
+|       IR            |     0.064 |
+|       O             |     0.528 |
+|       PC            |     0.079 |
+|     PC              |     0.551 |
+|       loop1[0].dff  |     0.088 |
+|       loop1[10].dff |     0.037 |
+|       loop1[11].dff |     0.040 |
+|       loop1[1].dff  |     0.028 |
+|       loop1[2].dff  |     0.030 |
+|       loop1[3].dff  |     0.046 |
+|       loop1[4].dff  |     0.046 |
+|       loop1[5].dff  |     0.088 |
+|       loop1[6].dff  |     0.028 |
+|       loop1[7].dff  |     0.028 |
+|       loop1[8].dff  |     0.046 |
+|       loop1[9].dff  |     0.047 |
+|     PW              |     0.107 |
+|       OVERFLOW      |     0.030 |
+|       PQ            |     0.050 |
+|       RDY           |     0.028 |
+|     SECOND          |     0.055 |
+|     SERVO2          |     0.001 |
+|     STALLING        |     0.024 |
+|     XM              |     0.368 |
+|       IR            |     0.108 |
+|       O             |     0.134 |
+|       PC            |     0.126 |
+|   InstMem           |     0.627 |
+|   RegisterFile      |     1.822 |
+|     dec32           |     0.146 |
+|       s4            |     0.146 |
+|     loop1[1].regs   |     0.087 |
 |       loop1[0].dff  |     0.004 |
-|       loop1[10].dff |     0.002 |
-|       loop1[11].dff |     0.002 |
+|       loop1[10].dff |     0.003 |
+|       loop1[11].dff |     0.003 |
 |       loop1[12].dff |     0.003 |
-|       loop1[13].dff |     0.002 |
-|       loop1[14].dff |     0.003 |
+|       loop1[13].dff |     0.003 |
+|       loop1[14].dff |     0.002 |
 |       loop1[15].dff |     0.003 |
 |       loop1[16].dff |     0.002 |
-|       loop1[17].dff |     0.002 |
-|       loop1[18].dff |     0.002 |
+|       loop1[17].dff |     0.003 |
+|       loop1[18].dff |     0.004 |
 |       loop1[19].dff |     0.002 |
-|       loop1[1].dff  |     0.001 |
+|       loop1[1].dff  |     0.003 |
 |       loop1[20].dff |     0.002 |
-|       loop1[21].dff |     0.002 |
-|       loop1[22].dff |     0.003 |
+|       loop1[21].dff |     0.003 |
+|       loop1[22].dff |     0.002 |
 |       loop1[23].dff |     0.003 |
-|       loop1[24].dff |     0.002 |
+|       loop1[24].dff |     0.003 |
 |       loop1[25].dff |     0.003 |
-|       loop1[26].dff |     0.002 |
-|       loop1[27].dff |     0.002 |
+|       loop1[26].dff |     0.003 |
+|       loop1[27].dff |     0.003 |
 |       loop1[28].dff |     0.003 |
 |       loop1[29].dff |     0.002 |
-|       loop1[2].dff  |     0.002 |
-|       loop1[30].dff |     0.002 |
-|       loop1[31].dff |     0.003 |
+|       loop1[2].dff  |     0.003 |
+|       loop1[30].dff |     0.003 |
+|       loop1[31].dff |     0.004 |
 |       loop1[3].dff  |     0.002 |
-|       loop1[4].dff  |     0.003 |
-|       loop1[5].dff  |     0.003 |
-|       loop1[6].dff  |     0.003 |
-|       loop1[7].dff  |     0.004 |
-|       loop1[8].dff  |     0.004 |
+|       loop1[4].dff  |     0.002 |
+|       loop1[5].dff  |     0.002 |
+|       loop1[6].dff  |     0.004 |
+|       loop1[7].dff  |     0.003 |
+|       loop1[8].dff  |     0.003 |
 |       loop1[9].dff  |     0.003 |
-|     loop1[28].regs  |     0.184 |
-|       loop1[0].dff  |     0.009 |
+|     loop1[28].regs  |     0.219 |
+|       loop1[0].dff  |     0.011 |
 |       loop1[10].dff |     0.006 |
-|       loop1[11].dff |     0.006 |
-|       loop1[12].dff |     0.006 |
-|       loop1[13].dff |     0.003 |
-|       loop1[14].dff |     0.007 |
+|       loop1[11].dff |     0.007 |
+|       loop1[12].dff |     0.008 |
+|       loop1[13].dff |     0.007 |
+|       loop1[14].dff |     0.005 |
 |       loop1[15].dff |     0.005 |
-|       loop1[16].dff |     0.004 |
-|       loop1[17].dff |     0.004 |
-|       loop1[18].dff |     0.004 |
-|       loop1[19].dff |     0.005 |
-|       loop1[1].dff  |     0.004 |
-|       loop1[20].dff |     0.004 |
-|       loop1[21].dff |     0.004 |
-|       loop1[22].dff |     0.006 |
+|       loop1[16].dff |     0.007 |
+|       loop1[17].dff |     0.010 |
+|       loop1[18].dff |     0.006 |
+|       loop1[19].dff |     0.006 |
+|       loop1[1].dff  |     0.005 |
+|       loop1[20].dff |     0.006 |
+|       loop1[21].dff |     0.006 |
+|       loop1[22].dff |     0.008 |
 |       loop1[23].dff |     0.006 |
-|       loop1[24].dff |     0.005 |
-|       loop1[25].dff |     0.005 |
-|       loop1[26].dff |     0.006 |
-|       loop1[27].dff |     0.005 |
+|       loop1[24].dff |     0.006 |
+|       loop1[25].dff |     0.007 |
+|       loop1[26].dff |     0.007 |
+|       loop1[27].dff |     0.006 |
 |       loop1[28].dff |     0.007 |
 |       loop1[29].dff |     0.006 |
 |       loop1[2].dff  |     0.008 |
-|       loop1[30].dff |     0.006 |
-|       loop1[31].dff |     0.008 |
-|       loop1[3].dff  |     0.006 |
-|       loop1[4].dff  |     0.006 |
-|       loop1[5].dff  |     0.006 |
-|       loop1[6].dff  |     0.006 |
-|       loop1[7].dff  |     0.008 |
-|       loop1[8].dff  |     0.005 |
-|       loop1[9].dff  |     0.005 |
-|     loop1[2].regs   |     0.016 |
-|     loop1[30].regs  |     0.006 |
-|     loop1[31].regs  |     0.384 |
-|       loop1[0].dff  |     0.017 |
-|       loop1[10].dff |     0.010 |
-|       loop1[11].dff |     0.016 |
-|       loop1[12].dff |     0.015 |
-|       loop1[13].dff |     0.006 |
-|       loop1[14].dff |     0.012 |
-|       loop1[15].dff |     0.006 |
-|       loop1[16].dff |     0.006 |
-|       loop1[17].dff |     0.008 |
-|       loop1[18].dff |     0.006 |
-|       loop1[19].dff |     0.007 |
-|       loop1[1].dff  |     0.006 |
-|       loop1[20].dff |     0.006 |
-|       loop1[21].dff |     0.007 |
-|       loop1[22].dff |     0.013 |
-|       loop1[23].dff |     0.013 |
-|       loop1[24].dff |     0.016 |
-|       loop1[25].dff |     0.013 |
-|       loop1[26].dff |     0.012 |
-|       loop1[27].dff |     0.016 |
-|       loop1[28].dff |     0.020 |
-|       loop1[29].dff |     0.013 |
-|       loop1[2].dff  |     0.014 |
-|       loop1[30].dff |     0.013 |
-|       loop1[31].dff |     0.013 |
+|       loop1[30].dff |     0.008 |
+|       loop1[31].dff |     0.007 |
+|       loop1[3].dff  |     0.008 |
+|       loop1[4].dff  |     0.007 |
+|       loop1[5].dff  |     0.005 |
+|       loop1[6].dff  |     0.008 |
+|       loop1[7].dff  |     0.005 |
+|       loop1[8].dff  |     0.007 |
+|       loop1[9].dff  |     0.007 |
+|     loop1[2].regs   |     0.007 |
+|     loop1[30].regs  |     0.002 |
+|     loop1[31].regs  |     0.536 |
+|       loop1[0].dff  |     0.032 |
+|       loop1[10].dff |     0.017 |
+|       loop1[11].dff |     0.008 |
+|       loop1[12].dff |     0.017 |
+|       loop1[13].dff |     0.013 |
+|       loop1[14].dff |     0.021 |
+|       loop1[15].dff |     0.014 |
+|       loop1[16].dff |     0.014 |
+|       loop1[17].dff |     0.024 |
+|       loop1[18].dff |     0.011 |
+|       loop1[19].dff |     0.020 |
+|       loop1[1].dff  |     0.014 |
+|       loop1[20].dff |     0.013 |
+|       loop1[21].dff |     0.011 |
+|       loop1[22].dff |     0.017 |
+|       loop1[23].dff |     0.021 |
+|       loop1[24].dff |     0.018 |
+|       loop1[25].dff |     0.019 |
+|       loop1[26].dff |     0.016 |
+|       loop1[27].dff |     0.021 |
+|       loop1[28].dff |     0.015 |
+|       loop1[29].dff |     0.020 |
+|       loop1[2].dff  |     0.025 |
+|       loop1[30].dff |     0.021 |
+|       loop1[31].dff |     0.019 |
 |       loop1[3].dff  |     0.015 |
-|       loop1[4].dff  |     0.016 |
-|       loop1[5].dff  |     0.012 |
-|       loop1[6].dff  |     0.012 |
-|       loop1[7].dff  |     0.017 |
+|       loop1[4].dff  |     0.013 |
+|       loop1[5].dff  |     0.014 |
+|       loop1[6].dff  |     0.013 |
+|       loop1[7].dff  |     0.012 |
 |       loop1[8].dff  |     0.015 |
-|       loop1[9].dff  |     0.012 |
-|     regA            |     0.156 |
-|       s4            |     0.156 |
-|     regB            |     0.235 |
-|       s4            |     0.235 |
-|   sound             |     7.469 |
-|     pmw             |     0.106 |
+|       loop1[9].dff  |     0.015 |
+|     regA            |     0.330 |
+|       s4            |     0.330 |
+|     regB            |     0.493 |
+|       s4            |     0.493 |
+|   sound             |     5.998 |
+|     pmw             |     0.089 |
 +---------------------+-----------+
 
 
