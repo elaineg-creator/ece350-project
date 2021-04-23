@@ -95,8 +95,6 @@ read_mem {
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/minute.mem}
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/Test Files/Memory Files/moreminutes.mem}
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/Test Files/Memory Files/minutesound.mem}
-  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/Test Files/Memory Files/finalprogram.mem}
-  {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/Test Files/Memory Files/final.mem}
 }
 read_verilog -library xil_defaultlib {
   {C:/Users/guoel/OneDrive/Documents/college class stuff/ece350/gitproj/ece350-project/DXpipe.v}

@@ -46,7 +46,7 @@ module Wrapper (clock, reset, start, stop, servo1, servo2, servo3, onLED, signal
 
 
 	// ADD YOUR MEMORY FILE HERE
-	localparam INSTR_FILE = "final";
+	localparam INSTR_FILE = "minutesound";
 
 	//clock divider for 1kHz
 

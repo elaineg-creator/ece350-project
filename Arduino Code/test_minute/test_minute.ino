@@ -25,7 +25,7 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(resetpin), reset, RISING);
   secservo.write(3);
   minservo.write(3); 
-//  delay(1000);
+
   Serial.begin(115200); 
 }
 
@@ -40,7 +40,7 @@ void secondTurn() {
     Serial.print("seconds TURNED: ");
     Serial.println(secpos - 1);
   } else {
-    secpos = 2;
+    secpos = 1;
     secservo.write(secpos * 3);
   }
 }
