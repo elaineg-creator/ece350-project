@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Thu Apr 22 20:12:10 2021
+| Date         : Fri Apr 23 14:13:37 2021
 | Host         : DESKTOP-CE0C5LI running 64-bit major release  (build 9200)
 | Command      : report_utilization -file Wrapper_utilization_synth.rpt -pb Wrapper_utilization_synth.pb
 | Design       : Wrapper
@@ -150,7 +150,7 @@ Table of Contents
 | FDCE     |  558 |        Flop & Latch |
 | LUT6     |  527 |                 LUT |
 | LUT2     |  453 |                 LUT |
-| LUT4     |  361 |                 LUT |
+| LUT4     |  360 |                 LUT |
 | LUT5     |  314 |                 LUT |
 | LUT3     |  274 |                 LUT |
 | FDRE     |  181 |        Flop & Latch |

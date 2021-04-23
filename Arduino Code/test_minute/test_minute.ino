@@ -54,7 +54,7 @@ void minTurn() {
   } else {
     minpos = 1;
     Serial.print("minute TURNED: ");
-    secservo.write(minpos * 3);
+    minservo.write(minpos * 3);
   }
 }
 
