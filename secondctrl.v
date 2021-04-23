@@ -14,9 +14,9 @@ module secondctrl(reset, clock, status, on, pc_reset);
                 status <= 1;
                 count <= 0;
             end else begin
-                if(count < 999 && status) begin
+                if(count < 996 && status) begin
                     count <= count + 1;
-                end else if(count == 999) begin             //if one second passed i.e. 1000 ms, set status to off (0)
+                end else if(count == 996) begin             //if one second passed i.e. 1000 ms, set status to off (0)
                     status <= 0;
                 end
             end
